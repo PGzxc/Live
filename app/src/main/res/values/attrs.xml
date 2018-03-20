@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--网络请求状态-->
+    <declare-styleable name="msv_SimpleMultiStateView">
+        <attr name="msv_emptyView" format="reference" />
+        <attr name="msv_loadingView" format="reference" />
+        <attr name="msv_failView" format="reference" />
+        <attr name="msv_contentView" format="reference" />
+        <attr name="msv_nonetView" format="reference" />
+        <attr name="msv_viewState" format="enum">
+            <enum name="content" value="10001" />
+            <enum name="loading" value="10002" />
+            <enum name="empty" value="10003" />
+            <enum name="fail" value="10004" />
+            <enum name="nonet" value="10005" />
+        </attr>
+    </declare-styleable>
+    <!--自定义设置条目-->
+    <declare-styleable name="MyTextItemView">
+        <attr name="left_text" format="string" />
+        <attr name="left_text_color" format="color" />
+        <attr name="right_text_color" format="color" />
+        <attr name="right_text" format="string" />
+        <attr name="left_icon" format="reference" />
+        <attr name="exist_icon" format="enum">
+            <enum name="exist" value="0" />
+            <enum name="no_exist" value="1" />
+        </attr>
+        <attr name="exist_right_text" format="enum">
+            <enum name="no_exist" value="0" />
+            <enum name="exist" value="1" />
+        </attr>
+        <attr name="editorable" format="enum">
+            <enum name="edit" value="0" />
+            <enum name="no_edit" value="1" />
+        </attr>
+        <attr name="exist_arrow" format="enum">
+            <enum name="no_exist" value="0" />
+            <enum name="exist" value="1" />
+        </attr>
+        <attr name="tipText" format="string" />
+        <attr name="inputType_m" format="enum">
+            <enum name="all" value="0" />
+            <enum name="number_only" value="1" />
+            <enum name="number_and_english" value="2" />
+        </attr>
+        <attr name="text_gravity" format="enum">
+            <enum name="right" value="0" />
+            <enum name="left" value="1" />
+        </attr>
+    </declare-styleable>
+    <!--个人界面头部-->
+    <declare-styleable name="HeadInfoView">
+        <attr name="head_icon" format="reference" />
+        <attr name="user_text" format="string" />
+        <attr name="user_typeFace" format="string" />
+        <attr name="other_typeFace" format="string" />
+        <attr name="rank_icon" format="reference" />
+        <attr name="live_icon" format="reference" />
+        <attr name="inke_number" format="string" />
+        <attr name="user_sex" format="enum">
+            <enum name="male" value="0" />
+            <enum name="female" value="1" />
+        </attr>
+    </declare-styleable>
+    <!--个人界面粉丝与关注-->
+    <declare-styleable name="FollowView">
+        <attr name="follow_num" format="string" />
+        <attr name="fans_num" format="string" />
+        <attr name="follow_typeFace" format="string" />
+        <attr name="content_typeFace" format="string" />
+
+    </declare-styleable>
+    <!--按照比例展示宽高的自定义控件-->
+    <declare-styleable name="RatioLayout">
+        <attr name="ratio" format="float" />
+    </declare-styleable>
+</resources>

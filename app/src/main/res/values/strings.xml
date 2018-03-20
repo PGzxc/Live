@@ -1,0 +1,420 @@
+<resources>
+    <string name="app_name">Live</string>
+    <string name="skip">跳过</string>
+
+    <!--自定义状态视图-->
+    <string name="text_empty">还没有数据呢！</string>
+    <string name="load_failed">加载失败，请点我重试</string>
+    <string name="loading">加载中...</string>
+    <string name="text_nonet">网络异常！</string>
+    <string name="text_retry">点击重试</string>
+    <string name="start_live">开启直播</string>
+    <string name="hint_user_name">请输入用户名</string>
+    <string name="hint_password">请输入密码</string>
+    <string name="btn_register">注册</string>
+    <string name="btn_login">登录</string>
+    <string name="user_empty">用户名不能为空</string>
+    <string name="user_long">用户名太长</string>
+    <string name="password_empty">密码不能为空</string>
+    <string name="register_success">注册成功</string>
+    <string name="register_fail">注册失败</string>
+    <string name="tab_home">首页</string>
+    <string name="tab_recent">附近</string>
+    <string name="tab_follow">关注</string>
+    <string name="tab_me">我</string>
+    <!--自定义设置item-->
+    <string name="login_only_can_input">qwertyuioplkjhgfdsazxcvbnmQWERTYUIOPLKJHGFDSAZXCVBNM1234567890</string>
+    <string name="login_only_can_number">1234567890</string>
+    <string name="follow_num">2</string>
+    <string name="my_follow">我的关注</string>
+    <string name="fans_num">100</string>
+    <string name="my_fans">我的粉丝</string>
+    <string name="inke_gift_range">映币贡献榜</string>
+    <string name="small_video">小视频</string>
+    <string name="mine_history">观看记录</string>
+    <string name="mine_income_number">10000 映币</string>
+    <string name="mine_income">收益</string>
+    <string name="mine_account">账户</string>
+    <string name="mine_account_num">100000砖石</string>
+    <string name="mine_level">等级</string>
+    <string name="mine_level_num">100 级</string>
+    <string name="mine_mygif_package">礼包</string>
+    <string name="mine_mygif_package_content">查看礼包</string>
+    <string name="mine_auth">实名认证</string>
+    <string name="mine_auth_verify">已认证</string>
+    <string name="mine_invite">邀请好友</string>
+    <string name="mine_invite_content">赢取映币</string>
+    <string name="mine_vote">节目投票</string>
+    <string name="mine_wolf">狼人杀</string>
+    <string name="mine_task">任务中心</string>
+    <string name="mine_setting">设置</string>
+    <string name="label_live">直播</string>
+    <string name="nearby_filter">筛选</string>
+    <string name="live_toast">已为您推荐了%1$s位新主播</string>
+    <!--直播页观众信息-->
+    <string name="tease_him">\@Ta</string>
+    <string name="give_gif">赠送礼物</string>
+    <string name="gif_charge">充值</string>
+    <!--直播头像-->
+    <string-array name="avatars">
+        <item>ic_person_1</item>
+        <item>ic_person_2</item>
+        <item>ic_person_3</item>
+        <item>ic_person_4</item>
+        <item>ic_person_5</item>
+        <item>ic_person_6</item>
+        <item>ic_person_7</item>
+        <item>ic_person_8</item>
+        <item>ic_person_9</item>
+        <item>ic_person_10</item>
+        <item>ic_person_11</item>
+        <item>ic_person_12</item>
+    </string-array>
+    <!--首页-推荐-轮播图-->
+    <string-array name="home_viewpager">
+        <item>ic_home_pager_1</item>
+        <item>ic_home_pager_2</item>
+        <item>ic_home_pager_3</item>
+        <item>ic_home_pager_4</item>
+    </string-array>
+    <!--用户名-->
+    <string-array name="userNames">
+        <item>世悦</item>
+        <item>丹洁</item>
+        <item>玲娇</item>
+        <item>紫霞</item>
+        <item>雨茹</item>
+        <item>陈红</item>
+        <item>婧宁</item>
+        <item>小莉</item>
+        <item>华琳</item>
+        <item>熙玉</item>
+        <item>亚玲</item>
+        <item>文霞</item>
+    </string-array>
+    <!--城市-->
+    <string-array name="provices_name">
+        <item>湖南省</item>
+        <item>天津市</item>
+        <item>内蒙古自治区</item>
+        <item>安徽省</item>
+        <item>澳门特别行政区</item>
+        <item>北京市</item>
+        <item>黑龙江省</item>
+        <item>河北省</item>
+        <item>广东省</item>
+        <item>青海省</item>
+        <item>台湾省</item>
+        <item>上海市</item>
+        <item>广西壮族自治区</item>
+        <item>重庆市</item>
+        <item>吉林省</item>
+        <item>西藏自治区</item>
+        <item>香港特别行政区</item>
+        <item>山西省</item>
+        <item>甘肃省</item>
+        <item>云南省</item>
+        <item>辽宁省</item>
+        <item>浙江省</item>
+        <item>江西省</item>
+        <item>宁夏回族自治区</item>
+        <item>海南省</item>
+        <item>新疆维吾尔自治区</item>
+        <item>四川省</item>
+        <item>湖北省</item>
+        <item>福建省</item>
+        <item>陕西省</item>
+        <item>江苏省</item>
+        <item>山东省</item>
+        <item>河南省</item>
+        <item>贵州省</item>
+    </string-array>
+    <!--直播标题-->
+    <string-array name="live_Titles">
+        <item>我开播了</item>
+        <item>我在这里，你在哪里？</item>
+        <item>要来看我直播么</item>
+        <item>求关注！</item>
+        <item>么么哒</item>
+        <item>求秒榜</item>
+        <item>早上好</item>
+        <item>求粉丝</item>
+        <item>睡前聊一会</item>
+    </string-array>
+    <!--等级-->
+    <string-array name="rank_levels">
+        <item>rank_1</item>
+        <item>rank_2</item>
+        <item>rank_3</item>
+        <item>rank_4</item>
+        <item>rank_5</item>
+        <item>rank_6</item>
+        <item>rank_7</item>
+        <item>rank_8</item>
+        <item>rank_9</item>
+        <item>rank_10</item>
+        <item>rank_11</item>
+        <item>rank_12</item>
+        <item>rank_13</item>
+        <item>rank_14</item>
+        <item>rank_15</item>
+        <item>rank_16</item>
+        <item>rank_17</item>
+        <item>rank_18</item>
+        <item>rank_19</item>
+        <item>rank_20</item>
+        <item>rank_21</item>
+        <item>rank_22</item>
+        <item>rank_23</item>
+        <item>rank_24</item>
+        <item>rank_25</item>
+        <item>rank_26</item>
+        <item>rank_27</item>
+        <item>rank_28</item>
+        <item>rank_29</item>
+        <item>rank_30</item>
+        <item>rank_31</item>
+        <item>rank_32</item>
+        <item>rank_33</item>
+        <item>rank_34</item>
+        <item>rank_35</item>
+        <item>rank_36</item>
+        <item>rank_37</item>
+        <item>rank_38</item>
+        <item>rank_39</item>
+        <item>rank_40</item>
+        <item>rank_41</item>
+        <item>rank_42</item>
+        <item>rank_43</item>
+        <item>rank_44</item>
+        <item>rank_45</item>
+        <item>rank_46</item>
+        <item>rank_47</item>
+        <item>rank_48</item>
+        <item>rank_49</item>
+        <item>rank_50</item>
+        <item>rank_51</item>
+        <item>rank_52</item>
+        <item>rank_53</item>
+        <item>rank_54</item>
+        <item>rank_55</item>
+        <item>rank_56</item>
+        <item>rank_57</item>
+        <item>rank_58</item>
+        <item>rank_59</item>
+        <item>rank_60</item>
+        <item>rank_61</item>
+        <item>rank_62</item>
+        <item>rank_63</item>
+        <item>rank_64</item>
+        <item>rank_65</item>
+        <item>rank_66</item>
+        <item>rank_67</item>
+        <item>rank_68</item>
+        <item>rank_69</item>
+        <item>rank_70</item>
+        <item>rank_71</item>
+        <item>rank_72</item>
+        <item>rank_73</item>
+        <item>rank_74</item>
+        <item>rank_75</item>
+        <item>rank_76</item>
+        <item>rank_77</item>
+        <item>rank_78</item>
+        <item>rank_79</item>
+        <item>rank_80</item>
+        <item>rank_81</item>
+        <item>rank_82</item>
+        <item>rank_83</item>
+        <item>rank_84</item>
+        <item>rank_85</item>
+        <item>rank_86</item>
+        <item>rank_87</item>
+        <item>rank_88</item>
+        <item>rank_89</item>
+        <item>rank_90</item>
+        <item>rank_91</item>
+        <item>rank_92</item>
+        <item>rank_93</item>
+        <item>rank_94</item>
+        <item>rank_95</item>
+        <item>rank_96</item>
+        <item>rank_97</item>
+        <item>rank_98</item>
+        <item>rank_99</item>
+        <item>rank_100</item>
+        <item>rank_101</item>
+        <item>rank_102</item>
+        <item>rank_103</item>
+        <item>rank_104</item>
+        <item>rank_105</item>
+        <item>rank_106</item>
+        <item>rank_107</item>
+        <item>rank_108</item>
+        <item>rank_109</item>
+        <item>rank_110</item>
+        <item>rank_111</item>
+        <item>rank_112</item>
+        <item>rank_113</item>
+        <item>rank_114</item>
+        <item>rank_115</item>
+        <item>rank_116</item>
+        <item>rank_117</item>
+        <item>rank_118</item>
+        <item>rank_119</item>
+        <item>rank_120</item>
+        <item>rank_121</item>
+        <item>rank_122</item>
+        <item>rank_123</item>
+        <item>rank_124</item>
+        <item>rank_125</item>
+        <item>rank_126</item>
+        <item>rank_127</item>
+        <item>rank_128</item>
+    </string-array>
+    <string-array name="nearby_Title">
+        <item>直播</item>
+        <item>小视频</item>
+        <item>游戏直播</item>
+    </string-array>
+    <string-array name="home_Title">
+        <item>推荐</item>
+        <item>小视频</item>
+        <item>吃鸡</item>
+    </string-array>
+    <!--附近-直播-跑马灯-->
+    <string-array name="recent_marquee">
+        <item>16143人正在玩</item>
+        <item>边玩边聊</item>
+    </string-array>
+    <!--附近-直播-数据-->
+    <string-array name="recent_liv_dis">
+        <item>16143人正在玩</item>
+        <item>1.0km</item>
+        <item>1.9km</item>
+        <item>2.1km</item>
+        <item>2.7km</item>
+        <item>3.1km</item>
+        <item>3.8km</item>
+        <item>4.7km</item>
+        <item>5.4km</item>
+        <item>5.5km</item>
+        <item>6.7km</item>
+        <item>7.0km</item>
+        <item>7.4km</item>
+        <item>7.8km</item>
+        <item>8.1km</item>
+        <item>8.8km</item>
+        <item>9.3km</item>
+        <item>9.8km</item>
+        <item>10.4km</item>
+        <item>12.5km</item>
+        <item>13.7km</item>
+        <item>16.0km</item>
+        <item>17.4km</item>
+        <item>18.8km</item>
+        <item>19.3km</item>
+        <item>20.8km</item>
+        <item>21.3km</item>
+        <item>26.8km</item>
+    </string-array>
+    <!--直播流-->
+    <string-array name="live_streams">
+        <item>rtmp://live.hkstv.hk.lxdns.com/live/hks</item>
+        <item>http://23340.live-vod.cdn.aodianyun.com/m3u8/0x0/merge/02235e76590a08db99d2296f8632c5cf.m3u8</item>
+    </string-array>
+    <!--直播页Pager-->
+    <string-array name="live_viewpager">
+        <item>透明页</item>
+        <item>聊天页</item>
+    </string-array>
+    <!--环信聊天室-->
+    <string-array name="chartRoomID">
+        <item>39862272065537</item>
+        <item>39862349660161</item>
+        <item>39862366437377</item>
+        <item>39862380068865</item>
+        <item>39862393700353</item>
+        <item>39862409428993</item>
+    </string-array>
+    <string-array name="gif_costs">
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>2</item>
+        <item>4</item>
+        <item>6</item>
+        <item>8</item>
+        <item>10</item>
+        <item>20</item>
+        <item>30</item>
+        <item>40</item>
+        <item>80</item>
+        <item>100</item>
+        <item>500</item>
+        <item>666</item>
+        <item>888</item>
+        <item>999</item>
+        <item>1333</item>
+        <item>2000</item>
+        <item>5000</item>
+        <item>6666</item>
+        <item>8888</item>
+        <item>9999</item>
+        <item>10000</item>
+
+    </string-array>
+    <string-array name="gif_names">
+        <item>鲜花</item>
+        <item>棒棒糖</item>
+        <item>蝴蝶结</item>
+        <item>2朵花</item>
+        <item>皇冠</item>
+        <item>钻戒</item>
+        <item>镜子</item>
+        <item>领结</item>
+        <item>花领结</item>
+        <item>话筒</item>
+        <item>帽子</item>
+        <item>小马</item>
+        <item>气球</item>
+        <item>四叶草</item>
+        <item>小太阳</item>
+        <item>兔耳朵</item>
+        <item>项链</item>
+        <item>比心</item>
+        <item>信封</item>
+        <item>小星星</item>
+        <item>魔花棒</item>
+        <item>蜜蜂</item>
+        <item>啤酒</item>
+        <item>热吻</item>
+
+    </string-array>
+    <integer-array name="gif_resourceIds">
+        <item>@drawable/yipitiezhi001</item>
+        <item>@drawable/yipitiezhi002</item>
+        <item>@drawable/yipitiezhi003</item>
+        <item>@drawable/yipitiezhi004</item>
+        <item>@drawable/yipitiezhi005</item>
+        <item>@drawable/yipitiezhi006</item>
+        <item>@drawable/yipitiezhi007</item>
+        <item>@drawable/yipitiezhi008</item>
+        <item>@drawable/yipitiezhi009</item>
+        <item>@drawable/yipitiezhi010</item>
+        <item>@drawable/yipitiezhi011</item>
+        <item>@drawable/yipitiezhi012</item>
+        <item>@drawable/yipitiezhi013</item>
+        <item>@drawable/yipitiezhi014</item>
+        <item>@drawable/yipitiezhi015</item>
+        <item>@drawable/yipitiezhi016</item>
+        <item>@drawable/yipitiezhi017</item>
+        <item>@drawable/yipitiezhi018</item>
+        <item>@drawable/yipitiezhi019</item>
+        <item>@drawable/yipitiezhi020</item>
+        <item>@drawable/yipitiezhi021</item>
+        <item>@drawable/yipitiezhi022</item>
+        <item>@drawable/yipitiezhi023</item>
+        <item>@drawable/yipitiezhi024</item>
+    </integer-array>
+</resources>

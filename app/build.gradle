@@ -1,0 +1,99 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+    defaultConfig {
+        applicationId "com.pgzxc.live"
+        minSdkVersion 18
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+//        ndk {
+//            // 设置支持的 SO 库构架，注意这里要根据你的实际情况来设置
+//            abiFilters 'armeabi'//  'arm64-v8a', 'x86', 'x86_64', 'mips', 'mips64',, 'armeabi-v7a'
+//        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    dataBinding {
+        enabled true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs', 'src/main/jniLibs']
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+//    testImplementation 'junit:junit:4.12'
+//    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+//    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    //import libs
+    implementation 'org.kymjs.kjframe:kjframe:2.5.5'
+    implementation 'com.airbnb.android:lottie:2.2.5'
+    //lottie
+    implementation 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.5@aar'
+    //rxjava
+    implementation 'io.reactivex.rxjava2:rxjava:2.1.8'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    implementation 'com.jakewharton.rxbinding2:rxbinding:2.0.0'
+    implementation 'com.trello.rxlifecycle2:rxlifecycle:2.2.1'
+    implementation 'com.trello.rxlifecycle2:rxlifecycle-components:2.1.0'
+    //butterknife
+    implementation 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    //convenientbanner
+    implementation 'com.bigkoo:convenientbanner:2.0.5'
+    //md
+    implementation 'com.android.support:design:26.1.0'
+    //bottom-bar
+    implementation 'com.roughike:bottom-bar:2.3.1'
+    //adapter
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.34'
+    //FlycoTabLayout
+    implementation 'com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar'
+    //Fragmentation
+    implementation 'me.yokeyword:fragmentation:1.2.5'
+    //跑马灯
+    implementation 'com.sunfusheng:marqueeview:1.2.0'
+    //刷新-SmartRefreshLayout
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.4-7'
+    implementation 'com.scwang.smartrefresh:SmartRefreshHeader:1.0.4-7'//没有使用特殊Header，可以不加这行
+    //七牛云播放器
+    implementation 'com.qiniu:happy-dns:0.2.+'
+    implementation 'com.qiniu.pili:pili-android-qos:0.8.+'
+    //垂直Viewpager
+    implementation 'com.github.castorflex.verticalviewpager:library:19.0.1'
+    //流畅的Android动画库
+    implementation 'com.github.florent37:viewanimator:1.0.5@aar'
+    //点赞动画
+    implementation 'tyrant:heartlayout:1.0.1'
+    //log日志
+    implementation 'com.orhanobut:logger:2.1.1'
+    //EventBus
+    implementation 'org.greenrobot:eventbus:3.1.1'
+    compile 'com.umeng.sdk:common:latest.integration'
+    compile 'com.umeng.sdk:analytics:latest.integration'
+    implementation project(':easeui')
+}

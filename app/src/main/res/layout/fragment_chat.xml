@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:id="@+id/root_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--房间标题栏-->
+        <include
+            android:id="@+id/layout_head"
+            layout="@layout/live_bar_room_title" />
+
+        <com.pgzxc.live.widget.gif.GiftItemView
+            android:id="@+id/gif_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="250dp"
+            android:layout_marginStart="10dp"
+            android:clipChildren="true" />
+        <!--房间聊天布局-->
+        <com.pgzxc.live.widget.player.RoomMessagesView
+            android:id="@+id/message_view"
+            android:layout_width="match_parent"
+            android:layout_height="170dp"
+            android:layout_alignParentBottom="true"
+            android:visibility="invisible" />
+
+        <!--弹幕布局-->
+        <com.pgzxc.live.widget.player.BarrageLayout
+            android:id="@+id/barrage_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/message_view"
+            android:layout_marginBottom="10dp" />
+        <!--视频点赞布局-->
+        <tyrantgit.widget.HeartLayout
+            android:id="@+id/heart_layout"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="60dp" />
+
+        <!--礼物布局-->
+
+        <!--底部操作面板-->
+        <include
+            android:id="@+id/live_bottom_bar"
+            layout="@layout/layout_bottom_menu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true" />
+
+        <!--私聊面板-->
+        <RelativeLayout
+            android:id="@+id/message_container"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_alignParentBottom="true" />
+    </RelativeLayout>
+
+
+</layout>

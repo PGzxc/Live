@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycleViewMsg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/linear_send"
+        android:layout_marginBottom="4dp" />
+
+    <LinearLayout
+        android:id="@+id/linear_send"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_alignParentBottom="true"
+        android:background="#E9E9E9"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:visibility="invisible">
+
+        <ImageView
+            android:id="@+id/image_close"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginEnd="9dp"
+            android:layout_marginStart="6dp"
+            android:clickable="true"
+            android:contentDescription="@null"
+            android:focusable="true"
+            android:src="@drawable/icon_close" />
+
+        <ImageView
+            android:id="@+id/image_barrage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:clickable="true"
+            android:contentDescription="@null"
+            android:focusable="true"
+            android:src="@drawable/selector_barrage_ctr" />
+
+        <com.pgzxc.live.widget.player.MentionEditText
+            android:id="@+id/edit_text_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            android:layout_weight="1"
+            android:background="#fff"
+            android:hint="说点什么吧..."
+            android:maxLines="3"
+            android:minHeight="36dp"
+            android:paddingEnd="1dp"
+            android:paddingStart="3dp"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/btn_send"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="60dp"
+            android:layout_height="36dp"
+            android:layout_marginEnd="6dp"
+            android:layout_marginStart="4dp"
+            android:layout_weight="0"
+            android:background="@drawable/selector_msg_send"
+            android:text="发送"
+            android:textColor="#fff"
+            android:textSize="16sp" />
+    </LinearLayout>
+</RelativeLayout>

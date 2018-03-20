@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/tab_home"
+        android:icon="@drawable/tab_home_normal"
+        android:title="@string/tab_home" />
+
+    <item
+        android:id="@+id/tab_recent"
+        android:icon="@drawable/tab_recent_normal"
+        android:title="@string/tab_recent" />
+    <item
+        android:id="@+id/tab_live"
+        android:icon="@drawable/tab_live_normal"
+        android:title="@null" />
+    <item
+        android:id="@+id/tab_follow"
+        android:icon="@drawable/tab_follow_normal"
+        android:title="@string/tab_follow" />
+    <item
+        android:id="@+id/tab_me"
+        android:icon="@drawable/tab_me_normal"
+        android:title="@string/tab_me" />
+</menu>

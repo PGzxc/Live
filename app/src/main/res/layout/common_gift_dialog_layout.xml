@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@null"
+    android:gravity="bottom"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_30"
+        android:background="#bb000000"
+        android:gravity="center"
+        android:text="@string/give_gif"
+        android:textColor="@color/white" />
+
+    <com.pgzxc.live.widget.gif.MyViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#bb000000" />
+
+    <LinearLayout
+        android:id="@+id/linear_dots"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_10"
+        android:background="#bb000000"
+        android:gravity="center"
+        android:orientation="horizontal" />
+
+    <RelativeLayout
+        android:id="@+id/linear_send"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40"
+        android:background="#bb000000"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingEnd="@dimen/dp_10"
+        android:paddingStart="@dimen/dp_10">
+
+        <TextView
+            android:id="@+id/tv_charge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/gif_charge"
+            android:textColor="@color/colorAccent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_3"
+            android:layout_toEndOf="@+id/tv_charge"
+            android:text=">"
+            android:textColor="@color/colorAccent" />
+
+        <Button
+            android:id="@+id/btn_gif_send"
+            android:layout_width="@dimen/dp_60"
+            android:layout_height="@dimen/dp_30"
+            android:layout_alignParentEnd="true"
+
+            android:background="@drawable/bg_round_follow"
+            android:gravity="center"
+            android:text="发送"
+            android:textSize="12sp" />
+    </RelativeLayout>
+</LinearLayout>

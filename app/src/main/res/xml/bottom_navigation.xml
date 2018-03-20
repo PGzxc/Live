@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tabs xmlns:app="http://schemas.android.com/apk/res-auto">
+    <tab
+        activeColor="@color/inkebar"
+        icon="@drawable/selector_home"
+        id="@+id/tab_home"
+        inActiveColor="@color/gray"
+        title="@string/tab_home" />
+    <tab
+        activeColor="@color/inkebar"
+        icon="@drawable/tab_recent_normal"
+        id="@+id/tab_recent"
+        inActiveColor="@color/gray"
+        title="@string/tab_recent" />
+    <tab
+        icon="@null"
+        id="@+id/tab_live" />
+    <tab
+        activeColor="@color/inkebar"
+        icon="@drawable/tab_follow_normal"
+        id="@+id/tab_follow"
+        inActiveColor="@color/gray"
+
+        title="@string/tab_follow" />
+    <tab
+        activeColor="@color/inkebar"
+        icon="@drawable/tab_me_normal"
+        id="@+id/tab_me"
+        inActiveColor="@color/gray"
+        title="@string/tab_me" />
+</tabs>

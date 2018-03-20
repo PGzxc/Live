@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/horizontal_div"
+            android:orientation="vertical">
+
+            <com.pgzxc.live.widget.TopTitleBar
+                android:id="@+id/titleBar"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_45" />
+
+            <com.pgzxc.live.widget.HeadInfoView
+                android:id="@+id/headerInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border_bottom"
+                app:head_icon="@drawable/ic_head"
+                app:inke_number="987"
+                app:live_icon="@drawable/rank_10"
+                app:other_typeFace="font/consola.ttf"
+                app:rank_icon="@drawable/rank_10"
+                app:user_sex="male"
+                app:user_text="橙子"
+                app:user_typeFace="font/consolab.ttf" />
+
+            <com.pgzxc.live.widget.FollowView
+                android:id="@+id/followInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border_bottom"
+                app:content_typeFace="font/consola.ttf"
+                app:fans_num="11"
+                app:follow_num="1"
+                app:follow_typeFace="font/consolab.ttf" />
+            <!--映客贡献榜-->
+            <com.pgzxc.live.widget.InfoItemView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_50"
+                android:layout_marginBottom="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_10"
+                android:background="@drawable/border_bottom"
+                app:editorable="no_edit"
+                app:exist_right_text="no_exist"
+                app:left_icon="@drawable/mine_inke_gift_range"
+                app:left_text="@string/inke_gift_range"
+                app:left_text_color="@color/black" />
+            <!--小视频-->
+            <com.pgzxc.live.widget.InfoItemView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_50"
+                android:background="@drawable/border_bottom"
+                app:editorable="no_edit"
+                app:exist_right_text="no_exist"
+                app:left_icon="@drawable/mine_video"
+                app:left_text="@string/small_video"
+                app:left_text_color="@color/black" />
+            <!--观看记录-->
+            <com.pgzxc.live.widget.InfoItemView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_50"
+                android:background="@drawable/border_bottom"
+                app:editorable="no_edit"
+                app:exist_right_text="no_exist"
+                app:left_icon="@drawable/mine_history"
+                app:left_text="@string/mine_history"
+                app:left_text_color="@color/black" />
+            <!--收益-->
+            <com.pgzxc.live.widget.InfoItemView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_50"
+                android:layout_marginTop="@dimen/dp_10"
+                android:background="@drawable/border_bottom"
+                app:editorable="no_edit"
+                app:left_icon="@drawable/mine_income"
+                app:left_text="@string/mine_income"
+                app:left_text_color="@color/black"
+                app:right_text="@string/mine_income_number"
+                app:right_text_color="@color/darkorange" />
+            <!--账户-->
+            <com.pgzxc.live.widget.InfoItemView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_50"
+                android:background="@drawable/border_bottom"
+                app:editorable="no_edit"
+                app:left_icon="@drawable/mine_account"
+                app:left_text="@string/mine_account"
+                app:left_text_color="@color/black"
+                app:right_text="@string/mine_account_num"
+                app:right_text_color="@color/darkorange" />
+            <!--等级-->
+            <com.pgzxc.live.widget.InfoItemView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_50"
+                android:background="@drawable/border_bottom"
+                app:editorable="no_edit"
+                app:left_icon="@drawable/mine_level"
+                app:left_text="@string/mine_level"
+                app:left_text_color="@color/black"
+                app:right_text="@string/mine_level_num"
+                app:right_text_color="@color/gray" />
+            <!--礼包-->
+            <com.pgzxc.live.widget.InfoItemView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_50"
+                android:background="@drawable/border_bottom"
+                app:editorable="no_edit"
+                app:left_icon="@drawable/mine_mygiftpackage"
+                app:left_text="@string/mine_mygif_package"
+                app:left_text_color="@color/black"
+                app:right_text="@string/mine_mygif_package_content"
+                app:right_text_color="@color/gray" />
+            <!--实名认证-->
+            <com.pgzxc.live.widget.InfoItemView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_50"
+                android:background="@drawable/border_bottom"
+                app:editorable="no_edit"
+                app:left_icon="@drawable/mine_auth"
+                app:left_text="@string/mine_auth"
+                app:left_text_color="@color/black"
+                app:right_text="@string/mine_auth_verify"
+                app:right_text_color="@color/gray" />
+            <!--邀请好友-->
+            <com.pgzxc.live.widget.InfoItemView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_50"
+                android:background="@drawable/border_bottom"
+                app:editorable="no_edit"
+                app:left_icon="@drawable/mine_invite"
+                app:left_text="@string/mine_invite"
+                app:left_text_color="@color/black"
+                app:right_text="@string/mine_invite_content"
+                app:right_text_color="@color/gray" />
+            <!--节目投票-->
+            <com.pgzxc.live.widget.InfoItemView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_50"
+                android:layout_marginTop="@dimen/dp_10"
+                android:background="@drawable/border_bottom"
+                app:editorable="no_edit"
+                app:exist_right_text="no_exist"
+                app:left_icon="@drawable/mine_vote"
+                app:left_text="@string/mine_vote"
+                app:left_text_color="@color/black" />
+            <!--狼人杀-->
+            <com.pgzxc.live.widget.InfoItemView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_50"
+                android:background="@drawable/border_bottom"
+                app:editorable="no_edit"
+                app:left_icon="@drawable/mine_wolf_icon"
+                app:left_text="@string/mine_wolf"
+                app:left_text_color="@color/black"
+                app:right_text="总局数0 胜率0%"
+                app:right_text_color="@color/gray" />
+            <!--任务中心-->
+            <com.pgzxc.live.widget.InfoItemView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_50"
+                android:background="@drawable/border_bottom"
+                app:editorable="no_edit"
+                app:exist_right_text="no_exist"
+                app:left_icon="@drawable/mine_task"
+                app:left_text="@string/mine_task"
+                app:left_text_color="@color/black" />
+
+            <!--设置-->
+            <com.pgzxc.live.widget.InfoItemView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_50"
+                android:layout_marginBottom="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_10"
+                android:background="@drawable/border_bottom"
+                app:editorable="no_edit"
+                app:exist_right_text="no_exist"
+                app:left_icon="@drawable/mine_setting"
+                app:left_text="@string/mine_setting"
+                app:left_text_color="@color/black" />
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+</layout>

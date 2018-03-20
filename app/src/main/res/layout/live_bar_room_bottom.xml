@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="4dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/comment_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="5dp"
+                android:clickable="true"
+                android:contentDescription="@null"
+                android:focusable="true"
+                android:src="@drawable/selector_live_comment" />
+
+            <ImageView
+                android:id="@+id/present_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:clickable="true"
+                android:contentDescription="@null"
+                android:focusable="true"
+                android:src="@drawable/selector_live_present" />
+
+            <ImageView
+                android:id="@+id/screenshot_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="end"
+                android:layout_marginEnd="15dp"
+                android:layout_marginStart="5dp"
+                android:layout_toStartOf="@id/present_image"
+                android:src="@drawable/selector_live_screenshot" />
+
+            <FrameLayout
+                android:id="@+id/fl_chat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="5dp">
+
+                <ImageView
+                    android:id="@+id/chat_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:contentDescription="@null"
+                    android:focusable="true"
+                    android:src="@drawable/selector_live_chat" />
+
+                <ImageView
+                    android:id="@+id/new_messages_warn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginTop="6dp"
+                    android:contentDescription="@null"
+                    android:src="@drawable/live_warn_messages"
+                    android:visibility="invisible" />
+            </FrameLayout>
+
+            <ImageButton
+                android:id="@+id/img_bt_switch_voice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="15dp"
+                android:layout_toStartOf="@id/fl_chat"
+                android:background="@drawable/live_voice_selector"
+                android:contentDescription="@null"
+                android:visibility="visible" />
+
+            <ImageButton
+                android:id="@+id/img_bt_switch_light"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="15dp"
+                android:layout_toStartOf="@id/img_bt_switch_voice"
+                android:background="@drawable/live_light_switch_bg"
+                android:contentDescription="@null"
+                android:visibility="visible" />
+        </RelativeLayout>
+    </LinearLayout>
+</layout>
