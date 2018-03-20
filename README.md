@@ -10,7 +10,9 @@
 - BaseRecycleViewAdapterHelper实现多种布局
 - SmartReFreshLayout实现下拉刷新和上拉加载
 - ViewAnimator实现聊天弹幕和礼物特效
- 
+
+# 其他
+因时间紧张，仅实现部分功能，后期有时间会补上；如果在运行时有Bug，请提交issue，见谅。 
  
 # 效果 
 
