@@ -12,6 +12,6 @@
 - ViewAnimator实现聊天弹幕和礼物特效
  
  
-# 效果 
+# 效果 
 
 ![](gif/live.gif)
