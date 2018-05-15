@@ -114,6 +114,7 @@
     <string name="add_public_group_chat">添加公开群</string>
     <string name="address_book">通讯录</string>
     <string name="agree">同意</string>
+    <string name="alert_kicked_for_offline">您已由于断线被踢出聊天室,点击重新加入.</string>
     <string name="all_members">所有成员</string>
     <string name="answer">接听</string>
     <string name="are_empty_group_of_news">正在清空群消息……</string>
@@ -191,6 +192,7 @@
     <string name="forward">转发</string>
     <string name="get_failed_please_check">获取失败,请检查网络或稍后再试</string>
     <string name="gorup_not_found">找不到这个群组</string>
+    <string name="group_ack_read_count">%1$d 已读</string>
     <string name="group_chat">群聊</string>
     <string name="group_id">群ID</string>
     <string name="group_is_blocked">正在屏蔽群组……</string>
@@ -245,6 +247,7 @@
     <string name="recording_video">录制视频</string>
     <string name="refreshing_group_list">正在刷新群列表</string>
     <string name="register">注册</string>
+    <string name="rejoining_the_chat_room">正在重新加入聊天室……</string>
     <string name="relay_call">Relay</string>
     <string name="release_to_cancel">松开手指，取消发送</string>
     <string name="remove_group_of">解除群屏蔽失败，请检查网络或稍后重试</string>
@@ -275,6 +278,8 @@
     <string name="the_current_chat_room_destroyed">当前聊天室已被创建者解散</string>
     <string name="the_current_group_destroyed">当前群聊已被群创建者解散</string>
     <string name="the_current_network">当前网络不可用，请检查网络设置</string>
+    <string name="title_ack_read_list">已读列表</string>
+    <string name="title_group_notification">群通知</string>
     <string name="title_user_profile">个人资料</string>
     <string name="toast_nick_not_isnull">昵称不能为空！</string>
     <string name="toast_no_support">暂不支持！</string>

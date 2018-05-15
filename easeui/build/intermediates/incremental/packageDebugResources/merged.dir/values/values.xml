@@ -196,6 +196,7 @@
     <string name="add_public_group_chat">Add public group</string>
     <string name="address_book">Address book</string>
     <string name="agree">Agree</string>
+    <string name="alert_kicked_for_offline">You\'ve been kicked for offline, click to rejoin again.</string>
     <string name="all_members">All members</string>
     <string name="answer">Answer</string>
     <string name="are_empty_group_of_news">Clearing messages</string>
@@ -273,6 +274,7 @@
     <string name="forward">Forward</string>
     <string name="get_failed_please_check">Failed to retrieve, please check the network or try again later</string>
     <string name="gorup_not_found">Can not find this group</string>
+    <string name="group_ack_read_count">%1$d Read</string>
     <string name="group_chat">Group chat</string>
     <string name="group_id">Group ID</string>
     <string name="group_is_blocked">Blocking the group..</string>
@@ -328,6 +330,7 @@
     <string name="recording_video">Record video</string>
     <string name="refreshing_group_list">Refreshing group list</string>
     <string name="register">Register</string>
+    <string name="rejoining_the_chat_room">Rejoining chat room</string>
     <string name="relay_call">Relay</string>
     <string name="release_to_cancel">Finger release to cancel sending</string>
     <string name="remove_group_of">Remove group of shielding failure, please check the network or try again later</string>
@@ -358,6 +361,8 @@
     <string name="the_current_chat_room_destroyed">The current chat room has been dismissed</string>
     <string name="the_current_group_destroyed">The current group has been dismissed</string>
     <string name="the_current_network">The current network is not available, please check the network Settings</string>
+    <string name="title_ack_read_list">Read List</string>
+    <string name="title_group_notification">Group Notification</string>
     <string name="title_user_profile">User Profile</string>
     <string name="toast_nick_not_isnull">nick cannot be empty!</string>
     <string name="toast_no_support">No Support!</string>

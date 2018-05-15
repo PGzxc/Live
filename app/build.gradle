@@ -2,6 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 26
+    buildToolsVersion '27.0.3'
     defaultConfig {
         applicationId "com.pgzxc.live"
         minSdkVersion 18
@@ -93,7 +94,7 @@ dependencies {
     implementation 'com.orhanobut:logger:2.1.1'
     //EventBus
     implementation 'org.greenrobot:eventbus:3.1.1'
-    compile 'com.umeng.sdk:common:latest.integration'
-    compile 'com.umeng.sdk:analytics:latest.integration'
+    implementation 'com.umeng.sdk:common:latest.integration'
+    implementation 'com.umeng.sdk:analytics:latest.integration'
     implementation project(':easeui')
 }

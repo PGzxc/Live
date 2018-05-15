@@ -199,7 +199,7 @@ public class ChatFragment extends BaseFragment<FragmentChatBinding> {
          * 被移除人员的username
          */
         @Override
-        public void onRemovedFromChatRoom(String roomId, String roomName, String participant) {
+        public void onRemovedFromChatRoom(int i, String roomId, String roomName, String participant) {
             if (roomId.equals(liveRoom.getChatroomId())) {
                 String curUser = EMClient.getInstance().getCurrentUser();
                 if (curUser.equals(participant)) {
@@ -212,6 +212,7 @@ public class ChatFragment extends BaseFragment<FragmentChatBinding> {
             }
             Logger.d("-----成员被移除出聊天室-----" + participant);
         }
+
 
         @Override
         public void onMuteListAdded(String s, List<String> list, long l) {

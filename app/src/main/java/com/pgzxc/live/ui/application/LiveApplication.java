@@ -2,7 +2,6 @@ package com.pgzxc.live.ui.application;
 
 import android.app.Application;
 import android.content.Context;
-
 import com.hyphenate.easeui.EaseUI;
 import com.orhanobut.logger.AndroidLogAdapter;
 import com.orhanobut.logger.Logger;

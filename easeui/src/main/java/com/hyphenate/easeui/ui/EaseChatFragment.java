@@ -13,6 +13,7 @@ import android.os.Handler;
 import android.provider.MediaStore;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v4.widget.SwipeRefreshLayout.OnRefreshListener;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -25,6 +26,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.hyphenate.EMCallBack;
 import com.hyphenate.EMMessageListener;
 import com.hyphenate.EMValueCallBack;
 import com.hyphenate.chat.EMChatRoom;
@@ -35,12 +37,14 @@ import com.hyphenate.chat.EMImageMessageBody;
 import com.hyphenate.chat.EMMessage;
 import com.hyphenate.chat.EMMessage.ChatType;
 import com.hyphenate.chat.EMTextMessageBody;
+import com.hyphenate.chat.adapter.EMAChatRoomManagerListener;
 import com.hyphenate.easeui.EaseConstant;
 import com.hyphenate.easeui.EaseUI;
 import com.hyphenate.easeui.R;
 import com.hyphenate.easeui.domain.EaseEmojicon;
 import com.hyphenate.easeui.domain.EaseUser;
 import com.hyphenate.easeui.model.EaseAtMessageHelper;
+import com.hyphenate.easeui.model.EaseDingMessageHelper;
 import com.hyphenate.easeui.utils.EaseCommonUtils;
 import com.hyphenate.easeui.utils.EaseUserUtils;
 import com.hyphenate.easeui.widget.EaseAlertDialog;
@@ -74,6 +78,7 @@ public class EaseChatFragment extends EaseBaseFragment implements EMMessageListe
     protected static final int REQUEST_CODE_MAP = 1;
     protected static final int REQUEST_CODE_CAMERA = 2;
     protected static final int REQUEST_CODE_LOCAL = 3;
+    protected static final int REQUEST_CODE_DING_MSG = 4;
 
     /**
      * params to fragment
@@ -94,6 +99,8 @@ public class EaseChatFragment extends EaseBaseFragment implements EMMessageListe
     protected EaseVoiceRecorderView voiceRecorderView;
     protected SwipeRefreshLayout swipeRefreshLayout;
     protected ListView listView;
+
+    private View kickedForOfflineLayout;
 
     protected boolean isloading;
     protected boolean haveMoreData = true;
@@ -151,6 +158,14 @@ public class EaseChatFragment extends EaseBaseFragment implements EMMessageListe
             messageList.setShowUserNick(true);
 //        messageList.setAvatarShape(1);
         listView = messageList.getListView();
+
+        kickedForOfflineLayout = getView().findViewById(R.id.layout_alert_kicked_off);
+        kickedForOfflineLayout.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onChatRoomViewCreation();
+            }
+        });
 
         extendMenuItemClickListener = new MyItemClickListener();
         inputMenu = (EaseChatInputMenu) getView().findViewById(R.id.input_menu);
@@ -365,7 +380,7 @@ public class EaseChatFragment extends EaseBaseFragment implements EMMessageListe
 
             @Override
             public void onRefresh() {
-                new Handler().postDelayed(new Runnable() {
+                handler.postDelayed(new Runnable() {
 
                     @Override
                     public void run() {
@@ -465,6 +480,12 @@ public class EaseChatFragment extends EaseBaseFragment implements EMMessageListe
                     Toast.makeText(getActivity(), R.string.unable_to_get_loaction, Toast.LENGTH_SHORT).show();
                 }
                 
+            } else if (requestCode == REQUEST_CODE_DING_MSG) { // To send the ding-type msg.
+                String msgContent = data.getStringExtra("msg");
+                EMLog.i(TAG, "To send the ding-type msg, content: " + msgContent);
+                // Send the ding-type msg.
+                EMMessage dingMsg = EaseDingMessageHelper.get().createDingMessage(toChatUsername, msgContent);
+                sendMessage(dingMsg);
             }
         }
     }
@@ -493,6 +514,9 @@ public class EaseChatFragment extends EaseBaseFragment implements EMMessageListe
 
         // remove activity from foreground activity list
         EaseUI.getInstance().popActivity(getActivity());
+
+        // Remove all padding actions in handler
+        handler.removeCallbacksAndMessages(null);
     }
 
     @Override
@@ -546,6 +570,9 @@ public class EaseChatFragment extends EaseBaseFragment implements EMMessageListe
                         }
                         onConversationInit();
                         onMessageListInit();
+
+                        // Dismiss the click-to-rejoin layout.
+                        kickedForOfflineLayout.setVisibility(View.GONE);
                     }
                 });
             }
@@ -760,8 +787,34 @@ public class EaseChatFragment extends EaseBaseFragment implements EMMessageListe
         }else if(chatType == EaseConstant.CHATTYPE_CHATROOM){
             message.setChatType(ChatType.ChatRoom);
         }
-        //Add to conversation
-        EMClient.getInstance().chatManager().saveMessage(message);
+
+        message.setMessageStatusCallback(new EMCallBack() {
+            @Override
+            public void onSuccess() {
+                if(isMessageListInited) {
+                    messageList.refresh();
+                }
+            }
+
+            @Override
+            public void onError(int code, String error) {
+                Log.i("EaseChatRowPresenter", "onError: " + code + ", error: " + error);
+                if(isMessageListInited) {
+                    messageList.refresh();
+                }
+            }
+
+            @Override
+            public void onProgress(int progress, String status) {
+                Log.i(TAG, "onProgress: " + progress);
+                if(isMessageListInited) {
+                    messageList.refresh();
+                }
+            }
+        });
+
+        // Send message.
+        EMClient.getInstance().chatManager().sendMessage(message);
         //refresh ui
         if(isMessageListInited) {
             messageList.refreshSelectLast();
@@ -1033,14 +1086,21 @@ public class EaseChatFragment extends EaseBaseFragment implements EMMessageListe
         }
 
         @Override
-        public void onRemovedFromChatRoom(final String roomId, final String roomName, final String participant) {
+        public void onRemovedFromChatRoom(final int reason, final String roomId, final String roomName, final String participant) {
             getActivity().runOnUiThread(new Runnable() {
                 public void run() {
                     if (roomId.equals(toChatUsername)) {
-                        Toast.makeText(getActivity(), R.string.quiting_the_chat_room, Toast.LENGTH_LONG).show();
-                        Activity activity = getActivity();
-                        if (activity != null && !activity.isFinishing()) {
-                            activity.finish();
+                        if (reason == EMAChatRoomManagerListener.BE_KICKED) {
+                            Toast.makeText(getActivity(), R.string.quiting_the_chat_room, Toast.LENGTH_LONG).show();
+                            Activity activity = getActivity();
+                            if (activity != null && !activity.isFinishing()) {
+                                activity.finish();
+                            }
+                        } else { // BE_KICKED_FOR_OFFLINE
+                            // Current logged in user be kicked out by server for current user offline,
+                            // show disconnect title bar, click to rejoin.
+                            Toast.makeText(getActivity(), "User be kicked for offline", Toast.LENGTH_SHORT).show();
+                            kickedForOfflineLayout.setVisibility(View.VISIBLE);
                         }
                     }
                 }

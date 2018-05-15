@@ -20,7 +20,7 @@ public class EmojiconGridAdapter extends ArrayAdapter<EaseEmojicon>{
     private Type emojiconType;
 
 
-    public EmojiconGridAdapter(Context context, int textViewResourceId, List<EaseEmojicon> objects, EaseEmojicon.Type emojiconType) {
+    public EmojiconGridAdapter(Context context, int textViewResourceId, List<EaseEmojicon> objects, Type emojiconType) {
         super(context, textViewResourceId, objects);
         this.emojiconType = emojiconType;
     }
