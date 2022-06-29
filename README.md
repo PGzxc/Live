@@ -17,4 +17,4 @@
  
 # 效果 
 
-![](gif/live.gif)
+![](https://fastly.jsdelivr.net/gh/PGzxc/Live@master/gif/live.gif)
