@@ -1,12 +1,41 @@
 apply plugin: 'com.android.application'
 
+static def releaseTime() {
+    return new Date().format("yyyyMMdd", TimeZone.getTimeZone("GMT+8"))
+}
+
 android {
-    compileSdkVersion 26
-    buildToolsVersion '27.0.3'
+    splits {
+        abi {
+            enable true
+            universalApk false
+            reset()
+            include 'armeabi-v7a'
+            include 'arm64-v8a'
+            //include 'x86'
+            //include 'x86_64'
+        }
+    }
+    signingConfigs {
+        debug {
+            storeFile file('..\\live.jks')
+            storePassword '123456'
+            keyAlias 'live'
+            keyPassword '123456'
+        }
+        release {
+            storeFile file('..\\live.jks')
+            storePassword '123456'
+            keyAlias 'live'
+            keyPassword '123456'
+        }
+    }
+    compileSdkVersion 28
+    //buildToolsVersion '28.0.3'
     defaultConfig {
         applicationId "com.pgzxc.live"
-        minSdkVersion 18
-        targetSdkVersion 26
+        minSdkVersion 21
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -17,13 +46,40 @@ android {
 //        }
     }
     buildTypes {
+        debug {
+            //applicationIdSuffix ".debug"
+            minifyEnabled false
+            debuggable true
+            zipAlignEnabled false    // 开启ZipAlign优化
+            shrinkResources false    //移除无用的资源文件
+            signingConfig signingConfigs.release
+            //proguardFiles fileTree(dir: "../setting/proguard", include: ["*.pro"]).asList().toArray()
+        }
         release {
             minifyEnabled false
+            debuggable true
+            zipAlignEnabled false    // 开启ZipAlign优化
+            shrinkResources false    //移除无用的资源文件
+            signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+            //APK Split
+            applicationVariants.all { variant ->
+                variant.outputs.all { output ->
+                    project.ext { appName = 'Live' }
+                    outputFileName = "${appName}_${output.getFilter(com.android.build.OutputFile.ABI)}_V${variant.versionCode}.apk"
+                }
+            }
         }
     }
-    dataBinding {
-        enabled true
+
+//    dataBinding {
+//        enabled true
+//    }
+    buildFeatures {
+        dataBinding = true
+        // for view binding :
+        // viewBinding = true
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -45,13 +101,13 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation 'com.android.support:appcompat-v7:26.1.0'
-    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:2.0.4'
 //    testImplementation 'junit:junit:4.12'
 //    androidTestImplementation 'com.android.support.test:runner:1.0.1'
 //    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
     //import libs
-    implementation 'org.kymjs.kjframe:kjframe:2.5.5'
+    implementation 'org.kymjs.kjframe:kjframe:2.5.5.2'
     implementation 'com.airbnb.android:lottie:2.2.5'
     //lottie
     implementation 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.5@aar'
@@ -62,12 +118,12 @@ dependencies {
     implementation 'com.trello.rxlifecycle2:rxlifecycle:2.2.1'
     implementation 'com.trello.rxlifecycle2:rxlifecycle-components:2.1.0'
     //butterknife
-    implementation 'com.jakewharton:butterknife:8.8.1'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    implementation 'com.jakewharton:butterknife:10.1.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.1.0'
     //convenientbanner
     implementation 'com.bigkoo:convenientbanner:2.0.5'
     //md
-    implementation 'com.android.support:design:26.1.0'
+    //implementation 'com.android.support:design:28.0.0'
     //bottom-bar
     implementation 'com.roughike:bottom-bar:2.3.1'
     //adapter
@@ -75,15 +131,22 @@ dependencies {
     //FlycoTabLayout
     implementation 'com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar'
     //Fragmentation
-    implementation 'me.yokeyword:fragmentation:1.2.5'
+    //implementation 'me.yokeyword:fragmentation:1.3.8'
+    //implementation 'me.yokeyword:fragmentation:1.2.5'
+
+    implementation 'me.yokeyword:fragmentationx:1.0.2' //androidx
     //跑马灯
     implementation 'com.sunfusheng:marqueeview:1.2.0'
     //刷新-SmartRefreshLayout
     implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.4-7'
     implementation 'com.scwang.smartrefresh:SmartRefreshHeader:1.0.4-7'//没有使用特殊Header，可以不加这行
     //七牛云播放器
-    implementation 'com.qiniu:happy-dns:0.2.+'
-    implementation 'com.qiniu.pili:pili-android-qos:0.8.+'
+    //implementation 'com.qiniu:happy-dns:0.2.+'
+    //implementation 'com.qiniu.pili:pili-android-qos:0.8.+'
+
+    implementation 'com.qiniu:happy-dns:1.0.0'
+    implementation 'com.qiniu.pili:pili-android-qos:0.8.20'
+
     //垂直Viewpager
     implementation 'com.github.castorflex.verticalviewpager:library:19.0.1'
     //流畅的Android动画库
@@ -94,7 +157,29 @@ dependencies {
     implementation 'com.orhanobut:logger:2.1.1'
     //EventBus
     implementation 'org.greenrobot:eventbus:3.1.1'
-    implementation 'com.umeng.sdk:common:latest.integration'
-    implementation 'com.umeng.sdk:analytics:latest.integration'
-    implementation project(':easeui')
+    //implementation 'com.umeng.sdk:common:latest.integration'
+    //implementation 'com.umeng.sdk:analytics:latest.integration'
+    implementation  'com.umeng.umsdk:common:9.4.2'// 必选
+    implementation  'com.umeng.umsdk:asms:1.4.0'// 必选
+
+
+    //implementation project(':easeui')
+    implementation 'io.hyphenate:hyphenate-chat:3.8.5'
+    //implementation 'io.hyphenate:ease-call-kit:3.8.5'
+    implementation 'io.hyphenate:ease-im-kit:3.8.5'
+    //implementation 'io.hyphenate:hyphenate-sdk:3.7.5' //完整版本，包含音视频功能
+
+//    implementation 'com.google.firebase:firebase-messaging'
+//    implementation 'com.google.firebase:firebase-analytics'
+//    // fresh and load more
+//    api 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.5.1'
+//    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+//    // room
+//    implementation "androidx.room:room-runtime:2.2.5"
+//    annotationProcessor "androidx.room:room-compiler:2.2.5"
+//    // parse
+//    implementation 'com.parse:parse-android:1.13.1'
+
+
 }
+//apply plugin: 'com.google.gms.google-services'

@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Live.iml" filepath="$PROJECT_DIR$/Live.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/easeui/easeui.iml" filepath="$PROJECT_DIR$/easeui/easeui.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Live.iml" filepath="$PROJECT_DIR$/.idea/modules/Live.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Live.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Live.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Live.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Live.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Live.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Live.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Live.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Live.app.unitTest.iml" />
     </modules>
   </component>
 </project>

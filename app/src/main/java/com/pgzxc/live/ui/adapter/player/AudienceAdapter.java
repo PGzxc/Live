@@ -1,6 +1,5 @@
 package com.pgzxc.live.ui.adapter.player;
 
-import android.support.annotation.Nullable;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.pgzxc.live.R;
@@ -13,7 +12,7 @@ import java.util.List;
  */
 
 public class AudienceAdapter extends BaseQuickAdapter<AudienceBean, BaseViewHolder> {
-    public AudienceAdapter(int layoutResId, @Nullable List<AudienceBean> data) {
+    public AudienceAdapter(int layoutResId,  List<AudienceBean> data) {
         super(layoutResId, data);
     }
 

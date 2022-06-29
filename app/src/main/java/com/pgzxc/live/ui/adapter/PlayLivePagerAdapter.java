@@ -1,11 +1,10 @@
 package com.pgzxc.live.ui.adapter;
 
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
-import com.pgzxc.live.data.constants.ViewPagerType;
-import com.pgzxc.live.ui.fragment.player.ChatFragment;
-import com.pgzxc.live.ui.fragment.player.NoFragment;
+
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
+
 
 /**
  * 直播页适配器

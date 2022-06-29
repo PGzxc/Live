@@ -5,7 +5,6 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.widget.Toast;
-
 import com.pgzxc.live.listener.PlayEvent;
 import com.pili.pldroid.player.AVOptions;
 import com.pili.pldroid.player.PLMediaPlayer;
@@ -21,11 +20,14 @@ public class PlayerHelper {
 
     private Activity mContext;
     private PLVideoTextureView mVideoView;
+
     private String mVideoPath = null;
     private MediaController mMediaController;
     private Toast mToast = null;
     private static final int MESSAGE_ID_RECONNECTING = 0x01;
     private PlayEvent.PlayCallBack playCallBack;
+
+    private String currentURL;
 
     public PlayerHelper(Activity mContext, PLVideoTextureView mVideoView, PlayEvent.PlayCallBack playCallBack) {
         this.mContext = mContext;
@@ -128,16 +130,25 @@ public class PlayerHelper {
         @Override
         public void onCompletion(PLMediaPlayer plMediaPlayer) {
             showToastTips("Play Completed !");
-            playCallBack.onEvent(PlayEvent.PlayCallBack.EVENT_PLAY_COMPLETION, "播放完成");
+
+            //playCallBack.onEvent(PlayEvent.PlayCallBack.EVENT_PLAY_COMPLETION, "播放完成");
+            mVideoView.setVideoPath(currentURL);
+            //mVideoView.setLooping(true);
+            mVideoView.start();
+
+
             //finish();
         }
     };
 
     public void playUrl(String url) {
         //mVideoView.setMediaController(mMediaController);
+        currentURL=url;
         mVideoView.stopPlayback();
         mVideoView.setVideoPath(url);
+        mVideoView.setLooping(true);
         mVideoView.start();
+
     }
 
     private void showToastTips(final String tips) {

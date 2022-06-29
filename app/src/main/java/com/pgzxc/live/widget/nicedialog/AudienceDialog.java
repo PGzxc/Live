@@ -1,7 +1,6 @@
 package com.pgzxc.live.widget.nicedialog;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -48,7 +47,7 @@ public class AudienceDialog extends BaseNiceDialog {
     }
 
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (savedInstanceState != null) {
             convertListener = savedInstanceState.getParcelable("listener");

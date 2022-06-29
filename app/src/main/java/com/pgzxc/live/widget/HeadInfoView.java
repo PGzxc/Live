@@ -4,13 +4,12 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v7.widget.AppCompatImageView;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
+
+import androidx.appcompat.widget.AppCompatImageView;
 
 import com.pgzxc.live.R;
 
@@ -33,11 +32,11 @@ public class HeadInfoView extends FrameLayout {
     Typeface other_Typeface;
     Context mContext;
 
-    public HeadInfoView(@NonNull Context context) {
+    public HeadInfoView( Context context) {
         this(context, null);
     }
 
-    public HeadInfoView(@NonNull Context context, @Nullable AttributeSet attrs) {
+    public HeadInfoView( Context context,  AttributeSet attrs) {
         super(context, attrs);
         mContext = context;
         initView(attrs);

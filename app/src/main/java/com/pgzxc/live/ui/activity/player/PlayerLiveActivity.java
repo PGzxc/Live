@@ -1,12 +1,14 @@
 package com.pgzxc.live.ui.activity.player;
 
 import android.os.Bundle;
-import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
+
+import androidx.viewpager.widget.ViewPager;
+
 import com.pgzxc.live.R;
 import com.pgzxc.live.api.reposity.PlayLiveRepority;
 import com.pgzxc.live.api.req.IntentKey;
@@ -179,7 +181,8 @@ public class PlayerLiveActivity extends BaseActivity<ActivityPlayerLiveBinding> 
         switch (event.getEvent()) {
             case AnyEventType.CHAT_FRAGMENT_LIVE_CLOSE:
             case AnyEventType.NO_FRAGMENT_LIVE_CLOSE:
-                onBackPressedSupport();
+                //onBackPressedSupport();
+                this.finish();
                 break;
         }
     }

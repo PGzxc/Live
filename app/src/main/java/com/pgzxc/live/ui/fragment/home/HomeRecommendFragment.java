@@ -1,8 +1,9 @@
 package com.pgzxc.live.ui.fragment.home;
 
 import android.os.Bundle;
-import android.support.v7.widget.GridLayoutManager;
 import android.view.View;
+
+import androidx.recyclerview.widget.GridLayoutManager;
 
 import com.github.florent37.viewanimator.AnimationListener;
 import com.github.florent37.viewanimator.ViewAnimator;

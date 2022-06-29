@@ -2,10 +2,15 @@ package com.pgzxc.live;
 
 
 import android.annotation.SuppressLint;
+import android.util.Log;
 import android.view.KeyEvent;
+
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+
 import com.pgzxc.live.databinding.ActivityMainBinding;
 import com.pgzxc.live.ui.base.BaseActivity;
-import com.pgzxc.live.ui.base.SupportFragment;
+import com.pgzxc.live.ui.base.BaseFragment;
 import com.pgzxc.live.ui.fragment.FollowFragment;
 import com.pgzxc.live.ui.fragment.HomeFragment;
 import com.pgzxc.live.ui.fragment.MeFragment;
@@ -17,7 +22,7 @@ import io.reactivex.Observable;
 
 
 public class MainActivity extends BaseActivity<ActivityMainBinding> {
-    private SupportFragment[] mFragments = new SupportFragment[4];
+    private BaseFragment[] mFragments = new BaseFragment[4];
     public static final int FIRST = 0;
     public static final int SECOND = 1;
     public static final int THIRD = 2;
@@ -25,6 +30,8 @@ public class MainActivity extends BaseActivity<ActivityMainBinding> {
     int position;
     // 定义一个变量，来标识是否退出
     private static boolean isExit = false;
+    private FragmentTransaction transaction;
+    Fragment mCurrentFragment;
 
     @Override
     protected int getActivityLayoutId() {
@@ -34,7 +41,26 @@ public class MainActivity extends BaseActivity<ActivityMainBinding> {
     @Override
     public void initWidget() {
         super.initWidget();
+//        mFragments[0] = new HomeFragment();
+//        mFragments[1] = new RecentFragment();
+//        mFragments[2] = new FollowFragment();
+//        mFragments[3] = new MeFragment();
+//
+//
+//        transaction= getSupportFragmentManager().beginTransaction();
+//        transaction.add(R.id.fragmentContainer,mFragments[0]);
+//        mCurrentFragment=mFragments[0];
+//       // transaction.add(R.id.fragmentContainer,mFragments[1]).hide(mFragments[1]);
+//        //transaction.add(R.id.fragmentContainer,mFragments[2]).hide(mFragments[2]);
+//        //transaction.add(R.id.fragmentContainer,mFragments[3]).hide(mFragments[3]);
+//        transaction.commitNow();
+//        //transaction.show(mFragments[0]);
+//        //transaction.commit();
+//        //transaction.show(mFragments[0]);
+//        //transaction.commitAllowingStateLoss();
+
         HomeFragment firstFragment = findFragment(HomeFragment.class);
+
         if (firstFragment == null) {
             mFragments[FIRST] = new HomeFragment();
             mFragments[SECOND] = new RecentFragment();
@@ -48,6 +74,7 @@ public class MainActivity extends BaseActivity<ActivityMainBinding> {
         } else {
             // 这里库已经做了Fragment恢复,所有不需要额外的处理了, 不会出现重叠问题
             // 这里我们需要拿到mFragments的引用
+
             mFragments[0] = findFragment(HomeFragment.class);
             mFragments[1] = findFragment(RecentFragment.class);
             mFragments[2] = findFragment(FollowFragment.class);
@@ -80,9 +107,35 @@ public class MainActivity extends BaseActivity<ActivityMainBinding> {
                     break;
             }
             getSupportDelegate().showHideFragment(mFragments[position]);
-        });
-    }
+            //switchFragment(mCurrentFragment,mFragments[position]);
 
+
+            //getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer,mFragments[position]).show(mFragments[position]) .commitAllowingStateLoss();
+            //getSupportDelegate().showHideFragment(mFragments[position]);
+            //transaction.replace(R.id.fragmentContainer,mFragments[position]);
+            //transaction.show(mFragments[position]);
+            //transaction.commitAllowingStateLoss();
+
+
+        });
+
+    }
+    /**
+     * 主activity进行控制不同的fragment
+     *
+     * @param from
+     * @param to
+     */
+    public void switchFragment(Fragment from, Fragment to) {
+        if (mCurrentFragment != to) {
+            mCurrentFragment = to;
+            if (!to.isAdded()) {//判断是否被添加到了Activity里面去了
+                transaction.hide(from).add(R.id.fragmentContainer, to).commitAllowingStateLoss();
+            } else {
+                transaction.hide(from).show(to).commitAllowingStateLoss();
+            }
+        }
+    }
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK) {

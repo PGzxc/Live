@@ -7,10 +7,10 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.annotation.RequiresApi;
-import android.support.v4.content.ContextCompat;
+
+import androidx.annotation.RequiresApi;
+import androidx.core.content.ContextCompat;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -280,7 +280,7 @@ public final class PermissionUtils {
         }
 
         @Override
-        protected void onCreate(@Nullable Bundle savedInstanceState) {
+        protected void onCreate( Bundle savedInstanceState) {
             if (sInstance.mThemeCallback != null) {
                 sInstance.mThemeCallback.onActivityCreate(this);
             }
@@ -298,8 +298,8 @@ public final class PermissionUtils {
 
         @Override
         public void onRequestPermissionsResult(int requestCode,
-                                               @NonNull String[] permissions,
-                                               @NonNull int[] grantResults) {
+                                               String[] permissions,
+                                                int[] grantResults) {
             sInstance.onRequestPermissionsResult(this);
             finish();
         }

@@ -2,9 +2,10 @@ package com.pgzxc.live.ui.fragment.player;
 
 import android.graphics.Color;
 import android.os.Handler;
-import android.support.v7.widget.LinearLayoutManager;
 import android.text.TextUtils;
 import android.view.View;
+
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.bumptech.glide.Glide;
 import com.hyphenate.EMCallBack;
@@ -221,6 +222,21 @@ public class ChatFragment extends BaseFragment<FragmentChatBinding> {
 
         @Override
         public void onMuteListRemoved(String s, List<String> list) {
+
+        }
+
+        @Override
+        public void onWhiteListAdded(String chatRoomId, List<String> whitelist) {
+
+        }
+
+        @Override
+        public void onWhiteListRemoved(String chatRoomId, List<String> whitelist) {
+
+        }
+
+        @Override
+        public void onAllMemberMuteStateChanged(String chatRoomId, boolean isMuted) {
 
         }
 
@@ -455,7 +471,7 @@ public class ChatFragment extends BaseFragment<FragmentChatBinding> {
      * 显示成员列表
      */
     private void showMemberList() {
-        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this.getActivity());
         layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
         mDataBinding.layoutHead.horizontalRecycleView.setLayoutManager(layoutManager);
         AudienceAdapter anchorAdapter = new AudienceAdapter(R.layout.adapter_live_audience, memberList);

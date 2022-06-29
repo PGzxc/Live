@@ -1,10 +1,11 @@
 package com.pgzxc.live.widget;
 
 import android.content.Context;
-import android.support.v7.widget.AppCompatImageView;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
+
+import androidx.appcompat.widget.AppCompatImageView;
 
 /**
  * 拦截Imagview向下传递

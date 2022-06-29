@@ -1,6 +1,7 @@
 package com.pgzxc.live.data.bean;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
+
 import com.chad.library.adapter.base.entity.MultiItemEntity;
 import java.io.Serializable;
 

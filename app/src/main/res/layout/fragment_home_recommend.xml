@@ -25,7 +25,7 @@
                 app:srlTextSizeTitle="16sp"
                 app:srlTextTimeMarginTop="2dp" />
 
-            <android.support.v4.widget.NestedScrollView
+            <androidx.core.widget.NestedScrollView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:overScrollMode="never"
@@ -43,7 +43,7 @@
                         android:layout_height="150dp"
                         app:canLoop="true" />
 
-                    <android.support.v7.widget.RecyclerView
+                    <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/recycleViewRecommend"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -66,7 +66,7 @@
                             android:textSize="12sp" />
                     </RelativeLayout>
                 </RelativeLayout>
-            </android.support.v4.widget.NestedScrollView>
+            </androidx.core.widget.NestedScrollView>
 
             <com.scwang.smartrefresh.layout.footer.ClassicsFooter
                 android:layout_width="match_parent"

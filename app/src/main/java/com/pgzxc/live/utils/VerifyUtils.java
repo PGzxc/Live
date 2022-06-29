@@ -1,9 +1,9 @@
 package com.pgzxc.live.utils;
 
 import android.content.Context;
-import android.support.design.widget.TextInputEditText;
 import android.text.TextUtils;
 
+import com.google.android.material.textfield.TextInputEditText;
 import com.pgzxc.live.R;
 
 /**
@@ -33,5 +33,4 @@ public class VerifyUtils {
     private static boolean isUserNameValid(String userName) {
         return 0 < userName.length() && userName.length() <= 11;
     }
-
 }

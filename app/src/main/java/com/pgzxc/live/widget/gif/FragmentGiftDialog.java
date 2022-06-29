@@ -3,9 +3,6 @@ package com.pgzxc.live.widget.gif;
 import android.app.Dialog;
 import android.content.res.TypedArray;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.v4.app.DialogFragment;
-import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -16,6 +13,10 @@ import android.widget.Button;
 import android.widget.GridView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
+
+import androidx.fragment.app.DialogFragment;
+import androidx.viewpager.widget.ViewPager;
+
 import com.pgzxc.live.R;
 import com.pgzxc.live.data.bean.Gif;
 import com.pgzxc.live.eventbus.AnyEvent;
@@ -50,7 +51,6 @@ public class FragmentGiftDialog extends DialogFragment {
     private int curIndex = 0;
     private GridViewAdapter[] arr = new GridViewAdapter[3];
 
-    @NonNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         View rootView = LayoutInflater.from(getActivity()).inflate(R.layout.common_gift_dialog_layout, null, false);

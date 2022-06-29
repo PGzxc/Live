@@ -2,7 +2,6 @@ package com.pgzxc.live.ui.adapter;
 
 import android.app.Activity;
 import android.content.Context;
-import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -25,12 +24,12 @@ public class HomeRecommendAdapter extends BaseQuickAdapter<LiveRoom, BaseViewHol
 
     private Activity mContext;
 
-    public HomeRecommendAdapter(Activity context, int layoutResId, @Nullable List<LiveRoom> data) {
+    public HomeRecommendAdapter(Activity context, int layoutResId, List<LiveRoom> data) {
         super(layoutResId, data);
         this.mContext = context;
     }
 
-    public HomeRecommendAdapter(@Nullable List<LiveRoom> data) {
+    public HomeRecommendAdapter(List<LiveRoom> data) {
         super(data);
     }
 

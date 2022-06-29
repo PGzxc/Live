@@ -1,20 +1,22 @@
 package com.pgzxc.live.ui.base;
 
-import android.databinding.DataBindingUtil;
-import android.databinding.ViewDataBinding;
-import android.os.Bundle;
-import android.support.annotation.Nullable;
 
+import android.os.Bundle;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
+import androidx.databinding.ViewDataBinding;
 import com.pgzxc.live.R;
 import com.pgzxc.live.widget.SimpleMultiStateView;
 import com.umeng.analytics.MobclickAgent;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
+import me.yokeyword.fragmentation.SupportActivity;
 
 /**
  * Activity基类
+ * SupportActivity
  */
 
 public abstract class BaseActivity<T extends ViewDataBinding> extends SupportActivity implements BaseView {

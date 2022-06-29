@@ -2,7 +2,6 @@ package com.pgzxc.live.widget;
 
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.support.annotation.LayoutRes;
 import android.util.AttributeSet;
 
 import com.pgzxc.live.R;
@@ -171,7 +170,7 @@ public class SimpleMultiStateView extends MultiStateView {
      *
      * @param emptyResource emptyView的layoutResource
      */
-    public SimpleMultiStateView setEmptyResource(@LayoutRes int emptyResource) {
+    public SimpleMultiStateView setEmptyResource( int emptyResource) {
         this.resIdEmpty = emptyResource;
         addViewForStatus(MultiStateView.STATE_EMPTY, resIdEmpty);
         return this;
@@ -182,7 +181,7 @@ public class SimpleMultiStateView extends MultiStateView {
      *
      * @param retryResource retryView的layoutResource
      */
-    public SimpleMultiStateView setRetryResource(@LayoutRes int retryResource) {
+    public SimpleMultiStateView setRetryResource(int retryResource) {
         this.resIdFail = retryResource;
         addViewForStatus(MultiStateView.STATE_FAIL, resIdFail);
         return this;
@@ -193,7 +192,7 @@ public class SimpleMultiStateView extends MultiStateView {
      *
      * @param loadingResource loadingView的layoutResource
      */
-    public SimpleMultiStateView setLoadingResource(@LayoutRes int loadingResource) {
+    public SimpleMultiStateView setLoadingResource(int loadingResource) {
         resIdLoading = loadingResource;
         addViewForStatus(MultiStateView.STATE_LOADING, resIdLoading);
         return this;
@@ -204,7 +203,7 @@ public class SimpleMultiStateView extends MultiStateView {
      *
      * @param noNetResource loadingView的layoutResource
      */
-    public SimpleMultiStateView setNoNetResource(@LayoutRes int noNetResource) {
+    public SimpleMultiStateView setNoNetResource(int noNetResource) {
         resIdNonet = noNetResource;
         addViewForStatus(MultiStateView.STATE_NONET, resIdNonet);
         return this;

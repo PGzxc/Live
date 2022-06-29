@@ -1,6 +1,5 @@
 package com.pgzxc.live.ui.adapter;
 
-import android.support.annotation.Nullable;
 import android.widget.ImageView;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
@@ -17,11 +16,11 @@ import java.util.List;
 public class RecentLiveAdapter extends BaseQuickAdapter<LiveRoom, BaseViewHolder> {
 
 
-    public RecentLiveAdapter(int layoutResId, @Nullable List<LiveRoom> data) {
+    public RecentLiveAdapter(int layoutResId,  List<LiveRoom> data) {
         super(layoutResId, data);
     }
 
-    public RecentLiveAdapter(@Nullable List<LiveRoom> data) {
+    public RecentLiveAdapter(List<LiveRoom> data) {
         super(data);
     }
 

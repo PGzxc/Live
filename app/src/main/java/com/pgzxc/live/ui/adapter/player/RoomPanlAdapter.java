@@ -1,7 +1,9 @@
 package com.pgzxc.live.ui.adapter.player;
 
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
+
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
+
 import com.pgzxc.live.ui.base.BaseFragment;
 import java.util.ArrayList;
 import java.util.List;

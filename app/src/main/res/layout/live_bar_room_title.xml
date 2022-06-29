@@ -11,8 +11,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:layout_marginEnd="10dp"
             android:layout_marginStart="15dp"
+            android:layout_marginEnd="10dp"
             android:background="@drawable/shape_live_anchor_bg"
             android:gravity="center_vertical"
             android:orientation="horizontal">
@@ -56,12 +56,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:gravity="center"
-                android:paddingBottom="5dp"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:paddingTop="5dp"
                 android:background="@drawable/bg_round_follow"
+                android:gravity="center"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="5dp"
                 android:text="关注"
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/sp_10" />
@@ -70,11 +70,11 @@
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_marginEnd="10dp"
             android:layout_marginStart="5dp"
+            android:layout_marginEnd="10dp"
             android:layout_weight="1">
 
-            <android.support.v7.widget.RecyclerView
+            <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/horizontal_recycle_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

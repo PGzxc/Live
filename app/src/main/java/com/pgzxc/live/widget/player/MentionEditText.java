@@ -18,7 +18,6 @@ package com.pgzxc.live.widget.player;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.support.v7.widget.AppCompatEditText;
 import android.text.Editable;
 import android.text.InputType;
 import android.text.Spannable;
@@ -31,6 +30,9 @@ import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputConnection;
 import android.view.inputmethod.InputConnectionWrapper;
 import android.widget.EditText;
+
+import androidx.appcompat.widget.AppCompatEditText;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;

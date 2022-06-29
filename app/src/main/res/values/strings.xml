@@ -320,8 +320,8 @@
     </string-array>
     <!--直播流-->
     <string-array name="live_streams">
-        <item>rtmp://live.hkstv.hk.lxdns.com/live/hks</item>
-        <item>http://23340.live-vod.cdn.aodianyun.com/m3u8/0x0/merge/02235e76590a08db99d2296f8632c5cf.m3u8</item>
+        <item>http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4</item>
+        <item>http://vjs.zencdn.net/v/oceans.mp4</item>
     </string-array>
     <!--直播页Pager-->
     <string-array name="live_viewpager">
@@ -330,12 +330,13 @@
     </string-array>
     <!--环信聊天室-->
     <string-array name="chartRoomID">
-        <item>39862272065537</item>
-        <item>39862349660161</item>
-        <item>39862366437377</item>
-        <item>39862380068865</item>
-        <item>39862393700353</item>
-        <item>39862409428993</item>
+        <item>175630569242625</item>
+<!--        <item>39862272065537</item>-->
+<!--        <item>39862349660161</item>-->
+<!--        <item>39862366437377</item>-->
+<!--        <item>39862380068865</item>-->
+<!--        <item>39862393700353</item>-->
+<!--        <item>39862409428993</item>-->
     </string-array>
     <string-array name="gif_costs">
         <item>1</item>

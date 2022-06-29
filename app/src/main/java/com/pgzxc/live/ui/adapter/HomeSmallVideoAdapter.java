@@ -1,7 +1,6 @@
 package com.pgzxc.live.ui.adapter;
 
 import android.app.Activity;
-import android.support.annotation.Nullable;
 import android.widget.ImageView;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
@@ -18,12 +17,12 @@ public class HomeSmallVideoAdapter extends BaseQuickAdapter<LiveRoom, BaseViewHo
 
     private Activity activity;
 
-    public HomeSmallVideoAdapter(Activity activity, int layoutResId, @Nullable List<LiveRoom> data) {
+    public HomeSmallVideoAdapter(Activity activity, int layoutResId,  List<LiveRoom> data) {
         super(layoutResId, data);
         this.activity = activity;
     }
 
-    public HomeSmallVideoAdapter(@Nullable List<LiveRoom> data) {
+    public HomeSmallVideoAdapter(List<LiveRoom> data) {
         super(data);
     }
 

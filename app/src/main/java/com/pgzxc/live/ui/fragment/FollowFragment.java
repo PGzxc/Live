@@ -1,9 +1,10 @@
 package com.pgzxc.live.ui.fragment;
 
-
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.view.View;
+
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+
 import com.github.florent37.viewanimator.ViewAnimator;
 import com.pgzxc.live.R;
 import com.pgzxc.live.api.reposity.FollowRepority;
@@ -15,7 +16,9 @@ import com.pgzxc.live.ui.activity.player.PlayerLiveActivity;
 import com.pgzxc.live.ui.adapter.FollowAdapter;
 import com.pgzxc.live.ui.base.BaseFragment;
 import com.pgzxc.live.utils.ActivityUtils;
+
 import org.kymjs.kjframe.ui.ViewInject;
+
 import java.util.List;
 import java.util.Random;
 

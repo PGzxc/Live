@@ -5,8 +5,6 @@ import android.app.Activity;
 import android.app.Application;
 import android.app.Application.ActivityLifecycleCallbacks;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-
 import java.lang.ref.WeakReference;
 import java.util.LinkedList;
 import java.util.List;
@@ -108,7 +106,7 @@ public final class Utils {
      *
      * @param app 应用
      */
-    public static void init(@NonNull final Application app) {
+    public static void init(final Application app) {
         Utils.sApplication = app;
         app.registerActivityLifecycleCallbacks(mCallbacks);
     }

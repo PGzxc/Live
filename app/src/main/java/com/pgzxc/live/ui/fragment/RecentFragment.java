@@ -1,7 +1,8 @@
 package com.pgzxc.live.ui.fragment;
 
-import android.support.v4.view.ViewPager;
 import android.view.View;
+
+import androidx.viewpager.widget.ViewPager;
 
 import com.flyco.tablayout.listener.OnTabSelectListener;
 import com.pgzxc.live.R;

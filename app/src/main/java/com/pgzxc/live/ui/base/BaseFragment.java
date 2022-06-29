@@ -1,20 +1,21 @@
 package com.pgzxc.live.ui.base;
 
-import android.databinding.DataBindingUtil;
-import android.databinding.ViewDataBinding;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.databinding.DataBindingUtil;
+import androidx.databinding.ViewDataBinding;
+import androidx.fragment.app.Fragment;
+
 import com.pgzxc.live.R;
 import com.pgzxc.live.widget.SimpleMultiStateView;
 import com.umeng.analytics.MobclickAgent;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
+import me.yokeyword.fragmentation.SupportFragment;
 
 /**
  * Fragment基类
@@ -25,17 +26,17 @@ public abstract class BaseFragment<T extends ViewDataBinding> extends SupportFra
 
     private boolean hasInitData = false;//是否已加载过一次数据
     Unbinder unbinder;
-    @Nullable
+
     @BindView(R.id.SimpleMultiStateView)
     SimpleMultiStateView mSimpleMultiStateView;
 
-    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,  Bundle savedInstanceState) {
         if (mDataBinding == null) {
             mDataBinding = DataBindingUtil.inflate(inflater, getFragmentLayoutId(), null, false);
             unbinder = ButterKnife.bind(getActivity());
             initWidget();//初始化控件
+            //initData();
             initStateView();
             //lazyLoad();//加载数据
             setListener();
@@ -56,7 +57,7 @@ public abstract class BaseFragment<T extends ViewDataBinding> extends SupportFra
     }
 
     @Override
-    public void onLazyInitView(@Nullable Bundle savedInstanceState) {
+    public void onLazyInitView(Bundle savedInstanceState) {
         super.onLazyInitView(savedInstanceState);
         initData();
     }

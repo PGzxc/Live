@@ -11,8 +11,8 @@
             android:layout_height="@dimen/dp_45"
             android:background="@color/colorPrimary"
             android:orientation="horizontal"
-            android:paddingEnd="@dimen/dp_10"
-            android:paddingStart="@dimen/dp_10">
+            android:paddingStart="@dimen/dp_10"
+            android:paddingEnd="@dimen/dp_10">
 
             <TextView
                 android:id="@+id/tv_recentFilter"
@@ -20,8 +20,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_weight="1"
-                android:drawablePadding="@dimen/dp_3"
                 android:drawableStart="@drawable/ic_nearby_filter"
+                android:drawablePadding="@dimen/dp_3"
                 android:gravity="center"
                 android:text="@string/nearby_filter"
                 android:textColor="@color/white"
@@ -49,7 +49,7 @@
                 android:drawableEnd="@drawable/ic_title_msg" />
         </LinearLayout>
 
-        <android.support.v4.view.ViewPager
+        <androidx.viewpager.widget.ViewPager
             android:id="@+id/viewPager_recent"
             android:layout_width="match_parent"
             android:layout_height="0dp"

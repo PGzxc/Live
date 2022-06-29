@@ -7,10 +7,6 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Build;
-import android.support.annotation.ColorInt;
-import android.support.annotation.IntRange;
-import android.support.annotation.NonNull;
-import android.support.v4.widget.DrawerLayout;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +14,11 @@ import android.view.ViewGroup.MarginLayoutParams;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.LinearLayout;
+
+import androidx.annotation.ColorInt;
+import androidx.annotation.IntRange;
+import androidx.annotation.NonNull;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.pgzxc.live.utils.Utils;
 
@@ -37,10 +38,10 @@ public final class BarUtils {
     // status bar
     ///////////////////////////////////////////////////////////////////////////
 
-    private static final int    DEFAULT_ALPHA = 112;
-    private static final String TAG_COLOR     = "TAG_COLOR";
-    private static final String TAG_ALPHA     = "TAG_ALPHA";
-    private static final int    TAG_OFFSET    = -123;
+    private static final int DEFAULT_ALPHA = 112;
+    private static final String TAG_COLOR = "TAG_COLOR";
+    private static final String TAG_ALPHA = "TAG_ALPHA";
+    private static final int TAG_OFFSET = -123;
 
     private BarUtils() {
         throw new UnsupportedOperationException("u can't instantiate me...");
@@ -88,7 +89,7 @@ public final class BarUtils {
      *
      * @param view view
      */
-    public static void addMarginTopEqualStatusBarHeight(@NonNull View view) {
+    public static void addMarginTopEqualStatusBarHeight(View view) {
         Object haveSetOffset = view.getTag(TAG_OFFSET);
         if (haveSetOffset != null && (Boolean) haveSetOffset) return;
         MarginLayoutParams layoutParams = (MarginLayoutParams) view.getLayoutParams();
@@ -104,7 +105,7 @@ public final class BarUtils {
      *
      * @param view view
      */
-    public static void subtractMarginTopEqualStatusBarHeight(@NonNull View view) {
+    public static void subtractMarginTopEqualStatusBarHeight(View view) {
         Object haveSetOffset = view.getTag(TAG_OFFSET);
         if (haveSetOffset == null || !(Boolean) haveSetOffset) return;
         MarginLayoutParams layoutParams = (MarginLayoutParams) view.getLayoutParams();
@@ -121,7 +122,7 @@ public final class BarUtils {
      * @param activity activity
      * @param color    状态栏颜色值
      */
-    public static void setStatusBarColor(@NonNull final Activity activity,
+    public static void setStatusBarColor(final Activity activity,
                                          @ColorInt final int color) {
         setStatusBarColor(activity, color, DEFAULT_ALPHA, false);
     }
@@ -279,9 +280,9 @@ public final class BarUtils {
      * @param alpha         状态栏透明度，此透明度并非颜色中的透明度
      * @param isTop         drawerLayout 是否在顶层
      */
-    public static void setStatusBarColor4Drawer(@NonNull final Activity activity,
-                                                @NonNull final DrawerLayout drawer,
-                                                @NonNull final View fakeStatusBar,
+    public static void setStatusBarColor4Drawer(final Activity activity,
+                                                final DrawerLayout drawer,
+                                                final View fakeStatusBar,
                                                 @ColorInt final int color,
                                                 @IntRange(from = 0, to = 255) final int alpha,
                                                 final boolean isTop) {

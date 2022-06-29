@@ -1,7 +1,6 @@
 package com.pgzxc.live.ui.adapter.player;
 
 import android.content.Context;
-import android.support.annotation.Nullable;
 import android.view.View;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
@@ -19,7 +18,7 @@ import java.util.Random;
 public class RoomMessageAdapter extends BaseQuickAdapter<EMMessage, BaseViewHolder> {
     private Context mContext;
 
-    public RoomMessageAdapter(Context context, int layoutResId, @Nullable List<EMMessage> data) {
+    public RoomMessageAdapter(Context context, int layoutResId,  List<EMMessage> data) {
         super(layoutResId, data);
     }
 

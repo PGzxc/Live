@@ -1,6 +1,5 @@
 package com.pgzxc.live.ui.adapter;
 
-import android.support.annotation.Nullable;
 import android.widget.ImageView;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
@@ -16,11 +15,11 @@ import java.util.List;
 public class RecentSmallVideoAdapter extends BaseQuickAdapter<LiveRoom, BaseViewHolder> {
 
 
-    public RecentSmallVideoAdapter(int layoutResId, @Nullable List<LiveRoom> data) {
+    public RecentSmallVideoAdapter(int layoutResId, List<LiveRoom> data) {
         super(layoutResId, data);
     }
 
-    public RecentSmallVideoAdapter(@Nullable List<LiveRoom> data) {
+    public RecentSmallVideoAdapter( List<LiveRoom> data) {
         super(data);
     }
 

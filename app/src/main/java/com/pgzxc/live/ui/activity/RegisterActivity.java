@@ -67,10 +67,10 @@ public class RegisterActivity extends BaseActivity<ActivityRegisterBinding> {
                 });
 
     }
-
-    @Override
-    public void onBackPressedSupport() {
-        super.onBackPressedSupport();
-        overridePendingTransition(R.anim.slide_left_in, R.anim.slide_right_out);
-    }
+//
+//    @Override
+//    public void onBackPressedSupport() {
+//        super.onBackPressedSupport();
+//        overridePendingTransition(R.anim.slide_left_in, R.anim.slide_right_out);
+//    }
 }
