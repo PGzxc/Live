@@ -22,6 +22,7 @@
 ```
 gradle:6.1.1-bin
 build-tools:com.android.tools.build:gradle:4.0.2
+jdk:1.8(Setting——>Build,Execution,Deployment——>Build Tools——>Gradle——>jdk)
 ```
 
 ### 2.2 V2(2025年)—仅更新配置并提供APK下载
