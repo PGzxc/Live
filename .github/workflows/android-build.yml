@@ -3,7 +3,7 @@ name: Android CI
 on:
   push:
     branches:
-      - main   # 监听 main 分支推送，你可以改成 master 或其他分支
+      - master   # 监听 main 分支推送，你可以改成 master 或其他分支
   pull_request:
 
 jobs:
