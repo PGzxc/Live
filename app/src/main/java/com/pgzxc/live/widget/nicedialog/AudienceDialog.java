@@ -9,16 +9,16 @@ import com.pgzxc.live.R;
 import com.pgzxc.live.api.req.StatusConfig;
 import com.pgzxc.live.data.bean.AudienceBean;
 
-import butterknife.BindView;
+//import butterknife.BindView;
 
 
 public class AudienceDialog extends BaseNiceDialog {
     private ViewConvertListener convertListener;
 
-    @BindView(R.id.image_round_audience)
+    //@BindView(R.id.image_round_audience)
     ImageView imageAudience;
 
-    @BindView(R.id.tv_AudienceName)
+    //@BindView(R.id.tv_AudienceName)
     TextView tvAudienceName;
 
     public static AudienceDialog newInstance(AudienceBean audienceBean) {
@@ -36,6 +36,9 @@ public class AudienceDialog extends BaseNiceDialog {
 
     @Override
     public void convertView(ViewHolder holder, BaseNiceDialog dialog) {
+        imageAudience = holder.getConvertView().findViewById(R.id.image_round_audience);
+        tvAudienceName = holder.getConvertView().findViewById(R.id.tv_AudienceName);
+
         if (convertListener != null) {
             convertListener.convertView(holder, dialog);
         }

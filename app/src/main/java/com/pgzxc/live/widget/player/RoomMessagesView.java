@@ -25,8 +25,8 @@ import com.pgzxc.live.listener.MessageViewListener;
 import com.pgzxc.live.ui.adapter.player.RoomMessageAdapter;
 import java.util.ArrayList;
 import java.util.List;
-import butterknife.BindView;
-import butterknife.ButterKnife;
+//import butterknife.BindView;
+//import butterknife.ButterKnife;
 
 /**
  * ========================================
@@ -46,32 +46,32 @@ public class RoomMessagesView extends RelativeLayout {
     /**
      * 消息列表
      */
-    @BindView(R.id.recycleViewMsg)
+    //@BindView(R.id.recycleViewMsg)
     RecyclerView recyclerView;
     /**
      * 输入面板
      */
-    @BindView(R.id.linear_send)
+    //@BindView(R.id.linear_send)
     View sendContainer;
     /**
      * 编辑框
      */
-    @BindView(R.id.edit_text_content)
+    //@BindView(R.id.edit_text_content)
     MentionEditText editText;
     /**
      * 发送
      */
-    @BindView(R.id.btn_send)
+    //@BindView(R.id.btn_send)
     Button sendBtn;
     /**
      * 关闭
      */
-    @BindView(R.id.image_close)
+    //@BindView(R.id.image_close)
     ImageView closeView;
     /**
      * 弹幕
      */
-    @BindView(R.id.image_barrage)
+    //@BindView(R.id.image_barrage)
     ImageView danmuImage;
     /**
      * 房间监听
@@ -106,7 +106,14 @@ public class RoomMessagesView extends RelativeLayout {
 
     private void init(Context context, AttributeSet attrs) {
         View view = LayoutInflater.from(context).inflate(R.layout.view_room_messages, this);
-        ButterKnife.bind(view);
+        //ButterKnife.bind(view);
+        recyclerView = view.findViewById(R.id.recycleViewMsg);
+        sendContainer = view.findViewById(R.id.linear_send);
+        editText = view.findViewById(R.id.edit_text_content);
+        sendBtn = view.findViewById(R.id.btn_send);
+        closeView = view.findViewById(R.id.image_close);
+        danmuImage = view.findViewById(R.id.image_barrage);
+
     }
 
     /**

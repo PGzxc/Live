@@ -70,23 +70,37 @@ public class LiveDialog extends AlertDialog implements OnClickListener {
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.ll_close:
-                closeAnimation(linearAction);
-                break;
-            case R.id.tv_live:
-                ViewInject.toast(mContext, "直播");
-                closeAnimation(linearAction);
-                break;
-            case R.id.tv_audio:
-                ViewInject.toast(mContext, "电台");
-                closeAnimation(linearAction);
-                break;
-            case R.id.tv_video:
-                ViewInject.toast(mContext, "小视频");
-                closeAnimation(linearAction);
-                break;
+        int id = view.getId();
+        if (id == R.id.ll_close) {
+            closeAnimation(linearAction);
+        } else if (id == R.id.tv_live) {
+            ViewInject.toast(mContext, "直播");
+            closeAnimation(linearAction);
+        } else if (id == R.id.tv_audio) {
+            ViewInject.toast(mContext, "电台");
+            closeAnimation(linearAction);
+        } else if (id == R.id.tv_video) {
+            ViewInject.toast(mContext, "小视频");
+            closeAnimation(linearAction);
         }
+
+//        switch (view.getId()) {
+//            case R.id.ll_close:
+//                closeAnimation(linearAction);
+//                break;
+//            case R.id.tv_live:
+//                ViewInject.toast(mContext, "直播");
+//                closeAnimation(linearAction);
+//                break;
+//            case R.id.tv_audio:
+//                ViewInject.toast(mContext, "电台");
+//                closeAnimation(linearAction);
+//                break;
+//            case R.id.tv_video:
+//                ViewInject.toast(mContext, "小视频");
+//                closeAnimation(linearAction);
+//                break;
+//        }
 
     }
 

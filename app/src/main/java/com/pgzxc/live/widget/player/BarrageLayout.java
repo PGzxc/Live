@@ -18,8 +18,8 @@ import com.github.florent37.viewanimator.AnimationBuilder;
 import com.github.florent37.viewanimator.ViewAnimator;
 import com.pgzxc.live.R;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
+//import butterknife.BindView;
+//import butterknife.ButterKnife;
 
 /**
  * ========================================
@@ -27,9 +27,9 @@ import butterknife.ButterKnife;
  * ========================================
  */
 public class BarrageLayout extends LinearLayout {
-    @BindView(R.id.rel_barrage_one)
+    //@BindView(R.id.rel_barrage_one)
     RelativeLayout RelBarrageOne;
-    @BindView(R.id.rel_barrage_two)
+    //@BindView(R.id.rel_barrage_two)
     RelativeLayout RelBarrageTwo;
 
     int count = 0;
@@ -69,8 +69,11 @@ public class BarrageLayout extends LinearLayout {
     };
 
     private void init(Context context, AttributeSet attrs) {
-        LayoutInflater.from(context).inflate(R.layout.view_barrage_layout, this);
-        ButterKnife.bind(this);
+        View view = LayoutInflater.from(context).inflate(R.layout.view_barrage_layout, this);
+        //ButterKnife.bind(this);
+        RelBarrageOne = view.findViewById(R.id.rel_barrage_one);
+        RelBarrageTwo = view.findViewById(R.id.rel_barrage_two);
+
         WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
         screenWidth = wm.getDefaultDisplay().getWidth();
 

@@ -114,7 +114,7 @@ public class ChatFragment extends BaseFragment<FragmentChatBinding> {
         if (getArguments() != null) {
             //头部
             liveRoom = (LiveRoom) getArguments().getSerializable(IntentKey.LiveRoom);
-            Glide.with(getActivity()).load(liveRoom.getAvatar()).error(R.drawable.ease_default_avatar).placeholder(R.color.white).into(mDataBinding.layoutHead.liveAnchor);
+            Glide.with(getActivity()).load(liveRoom.getAvatar()).error(R.drawable.default_head).placeholder(R.color.white).into(mDataBinding.layoutHead.liveAnchor);
             mDataBinding.layoutHead.tvUsername.setText(liveRoom.getUserName());
             mDataBinding.layoutHead.audienceNum.setText(String.valueOf(liveRoom.getAudienceNum()));
         }

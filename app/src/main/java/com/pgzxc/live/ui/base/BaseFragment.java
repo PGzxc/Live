@@ -12,9 +12,9 @@ import androidx.fragment.app.Fragment;
 import com.pgzxc.live.R;
 import com.pgzxc.live.widget.SimpleMultiStateView;
 import com.umeng.analytics.MobclickAgent;
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.Unbinder;
+//import butterknife.BindView;
+///import butterknife.ButterKnife;
+//import butterknife.Unbinder;
 import me.yokeyword.fragmentation.SupportFragment;
 
 /**
@@ -25,16 +25,16 @@ public abstract class BaseFragment<T extends ViewDataBinding> extends SupportFra
     protected T mDataBinding;//dataBinding实例
 
     private boolean hasInitData = false;//是否已加载过一次数据
-    Unbinder unbinder;
+    //Unbinder unbinder;
 
-    @BindView(R.id.SimpleMultiStateView)
+    //@BindView(R.id.SimpleMultiStateView)
     SimpleMultiStateView mSimpleMultiStateView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,  Bundle savedInstanceState) {
         if (mDataBinding == null) {
             mDataBinding = DataBindingUtil.inflate(inflater, getFragmentLayoutId(), null, false);
-            unbinder = ButterKnife.bind(getActivity());
+            //unbinder = ButterKnife.bind(getActivity());
             initWidget();//初始化控件
             //initData();
             initStateView();
@@ -105,6 +105,7 @@ public abstract class BaseFragment<T extends ViewDataBinding> extends SupportFra
 
     private void initStateView() {
         if (mSimpleMultiStateView == null) return;
+        mSimpleMultiStateView=mDataBinding.getRoot().findViewById(R.id.SimpleMultiStateView);
         mSimpleMultiStateView.setEmptyResource(R.layout.view_empty)
                 .setRetryResource(R.layout.view_retry)
                 .setLoadingResource(R.layout.view_loading)
@@ -149,7 +150,7 @@ public abstract class BaseFragment<T extends ViewDataBinding> extends SupportFra
     @Override
     public void onDestroy() {
         super.onDestroy();
-        unbinder.unbind();
+        //unbinder.unbind();
     }
 
     @Override

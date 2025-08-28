@@ -17,8 +17,8 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.pgzxc.live.R;
 
-import butterknife.ButterKnife;
-import butterknife.Unbinder;
+//import butterknife.ButterKnife;
+//import butterknife.Unbinder;
 
 public abstract class BaseNiceDialog extends DialogFragment {
     private static final String MARGIN = "margin";
@@ -43,7 +43,7 @@ public abstract class BaseNiceDialog extends DialogFragment {
 
     public abstract int intLayoutId();
 
-    Unbinder unbinder;
+    //Unbinder unbinder;
 
     public abstract void convertView(ViewHolder holder, BaseNiceDialog dialog);
 
@@ -70,7 +70,7 @@ public abstract class BaseNiceDialog extends DialogFragment {
     @Override
     public View onCreateView(LayoutInflater inflater,  ViewGroup container,  Bundle savedInstanceState) {
         View view = inflater.inflate(layoutId, container, false);
-        unbinder = ButterKnife.bind(this,view);
+        //unbinder = ButterKnife.bind(this,view);
         convertView(ViewHolder.create(view), this);
         return view;
     }

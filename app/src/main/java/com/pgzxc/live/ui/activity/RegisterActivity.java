@@ -20,6 +20,7 @@ import io.reactivex.schedulers.Schedulers;
  */
 
 public class RegisterActivity extends BaseActivity<ActivityRegisterBinding> {
+
     @Override
     protected int getActivityLayoutId() {
         return R.layout.activity_register;

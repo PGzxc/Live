@@ -9,9 +9,9 @@ import androidx.databinding.ViewDataBinding;
 import com.pgzxc.live.R;
 import com.pgzxc.live.widget.SimpleMultiStateView;
 import com.umeng.analytics.MobclickAgent;
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.Unbinder;
+//import butterknife.BindView;
+//import butterknife.ButterKnife;
+//import butterknife.Unbinder;
 import me.yokeyword.fragmentation.SupportActivity;
 
 /**
@@ -22,11 +22,10 @@ import me.yokeyword.fragmentation.SupportActivity;
 public abstract class BaseActivity<T extends ViewDataBinding> extends SupportActivity implements BaseView {
     protected T mDataBinding;//ViewDataBinding引用
     protected BaseActivity activity;
-    Unbinder unbinder;
+    //Unbinder unbinder;
     @Nullable
-    @BindView(R.id.SimpleMultiStateView)
-    SimpleMultiStateView mSimpleMultiStateView;
 
+    SimpleMultiStateView mSimpleMultiStateView=null;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -36,7 +35,8 @@ public abstract class BaseActivity<T extends ViewDataBinding> extends SupportAct
         if (layoutId != 0) {//如果设置了布局Id
             mDataBinding = DataBindingUtil.setContentView(this, layoutId);//解析布局
         }
-        unbinder = ButterKnife.bind(this, activity);
+        //unbinder = ButterKnife.bind(this, activity);
+
         initStateView();
         initWidget();
         initData();
@@ -69,6 +69,7 @@ public abstract class BaseActivity<T extends ViewDataBinding> extends SupportAct
 
     private void initStateView() {
         if (mSimpleMultiStateView == null) return;
+        mSimpleMultiStateView=mDataBinding.getRoot().findViewById(R.id.SimpleMultiStateView);
         mSimpleMultiStateView.setEmptyResource(R.layout.view_empty)
                 .setRetryResource(R.layout.view_retry)
                 .setLoadingResource(R.layout.view_loading)
@@ -113,7 +114,7 @@ public abstract class BaseActivity<T extends ViewDataBinding> extends SupportAct
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        unbinder.unbind();
+        //unbinder.unbind();
     }
 
     @Override

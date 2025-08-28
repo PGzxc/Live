@@ -58,46 +58,77 @@ public class HeadInfoView extends FrameLayout {
         int indexCount = typedArray.getIndexCount();
         for (int i = 0; i < indexCount; i++) {
             int index = typedArray.getIndex(i);
-            switch (index) {
-                case R.styleable.HeadInfoView_head_icon:
-                    Drawable drawableHead = typedArray.getDrawable(index);
-                    imageViewHead.setImageDrawable(drawableHead);
-                    break;
-                case R.styleable.HeadInfoView_user_text:
-                    String user_text = typedArray.getString(index);
-                    tvUerName.setText(user_text);
-                    break;
-                case R.styleable.HeadInfoView_user_sex:
-                    int userSex = typedArray.getInt(index, 0);
-                    if (userSex == 0) {
-                        imageViewSex.setImageResource(R.drawable.ic_male);
-                    } else {
-                        imageViewSex.setImageResource(R.drawable.ic_female);
-                    }
-                    break;
-                case R.styleable.HeadInfoView_user_typeFace:
-                    tvUerName.setTypeface(user_Typeface);
-                    break;
-                case R.styleable.HeadInfoView_other_typeFace:
-                    tvInke.setTypeface(other_Typeface);
-                    tvInkeNum.setTypeface(other_Typeface);
-                    tvEdit.setTypeface(other_Typeface);
-                    break;
-                case R.styleable.HeadInfoView_rank_icon:
-                    Drawable drawableRank = typedArray.getDrawable(index);
-                    imageViewRankLev.setImageDrawable(drawableRank);
-                    break;
-                case R.styleable.HeadInfoView_live_icon:
-                    Drawable drawableLive = typedArray.getDrawable(index);
-                    imageViewLiveLev.setImageDrawable(drawableLive);
-                    break;
-                case R.styleable.HeadInfoView_inke_number:
-                    String inkeNum = typedArray.getString(index);
-                    tvInkeNum.setText(inkeNum);
-                    break;
-                default:
-                    break;
+            if (index == R.styleable.HeadInfoView_head_icon) {
+                Drawable drawableHead = typedArray.getDrawable(index);
+                imageViewHead.setImageDrawable(drawableHead);
+            } else if (index == R.styleable.HeadInfoView_user_text) {
+                String user_text = typedArray.getString(index);
+                tvUerName.setText(user_text);
+            } else if (index == R.styleable.HeadInfoView_user_sex) {
+                int userSex = typedArray.getInt(index, 0);
+                if (userSex == 0) {
+                    imageViewSex.setImageResource(R.drawable.ic_male);
+                } else {
+                    imageViewSex.setImageResource(R.drawable.ic_female);
+                }
+            } else if (index == R.styleable.HeadInfoView_user_typeFace) {
+                tvUerName.setTypeface(user_Typeface);
+            } else if (index == R.styleable.HeadInfoView_other_typeFace) {
+                tvInke.setTypeface(other_Typeface);
+                tvInkeNum.setTypeface(other_Typeface);
+                tvEdit.setTypeface(other_Typeface);
+            } else if (index == R.styleable.HeadInfoView_rank_icon) {
+                Drawable drawableRank = typedArray.getDrawable(index);
+                imageViewRankLev.setImageDrawable(drawableRank);
+            } else if (index == R.styleable.HeadInfoView_live_icon) {
+                Drawable drawableLive = typedArray.getDrawable(index);
+                imageViewLiveLev.setImageDrawable(drawableLive);
+            } else if (index == R.styleable.HeadInfoView_inke_number) {
+                String inkeNum = typedArray.getString(index);
+                tvInkeNum.setText(inkeNum);
             }
+
+
+//            switch (index) {
+//                case R.styleable.HeadInfoView_head_icon:
+//                    Drawable drawableHead = typedArray.getDrawable(index);
+//                    imageViewHead.setImageDrawable(drawableHead);
+//                    break;
+//                case R.styleable.HeadInfoView_user_text:
+//                    String user_text = typedArray.getString(index);
+//                    tvUerName.setText(user_text);
+//                    break;
+//                case R.styleable.HeadInfoView_user_sex:
+//                    int userSex = typedArray.getInt(index, 0);
+//                    if (userSex == 0) {
+//                        imageViewSex.setImageResource(R.drawable.ic_male);
+//                    } else {
+//                        imageViewSex.setImageResource(R.drawable.ic_female);
+//                    }
+//                    break;
+//                case R.styleable.HeadInfoView_user_typeFace:
+//                    tvUerName.setTypeface(user_Typeface);
+//                    break;
+//                case R.styleable.HeadInfoView_other_typeFace:
+//                    tvInke.setTypeface(other_Typeface);
+//                    tvInkeNum.setTypeface(other_Typeface);
+//                    tvEdit.setTypeface(other_Typeface);
+//                    break;
+//                case R.styleable.HeadInfoView_rank_icon:
+//                    Drawable drawableRank = typedArray.getDrawable(index);
+//                    imageViewRankLev.setImageDrawable(drawableRank);
+//                    break;
+//                case R.styleable.HeadInfoView_live_icon:
+//                    Drawable drawableLive = typedArray.getDrawable(index);
+//                    imageViewLiveLev.setImageDrawable(drawableLive);
+//                    break;
+//                case R.styleable.HeadInfoView_inke_number:
+//                    String inkeNum = typedArray.getString(index);
+//                    tvInkeNum.setText(inkeNum);
+//                    break;
+//                default:
+//                    break;
+//            }
         }
         typedArray.recycle();
     }

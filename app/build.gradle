@@ -1,4 +1,8 @@
-apply plugin: 'com.android.application'
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
 
 static def releaseTime() {
     return new Date().format("yyyyMMdd", TimeZone.getTimeZone("GMT+8"))
@@ -30,13 +34,14 @@ android {
             keyPassword '123456'
         }
     }
-    compileSdkVersion 28
+    namespace "com.pgzxc.live"
+    compileSdk 34
     //buildToolsVersion '28.0.3'
     defaultConfig {
         applicationId "com.pgzxc.live"
-        minSdkVersion 21
-        targetSdkVersion 28
-        versionCode 3
+        minSdk 21
+        targetSdk 34
+        versionCode 4
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
@@ -82,8 +87,11 @@ android {
         // viewBinding = true
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    kotlinOptions {
+        jvmTarget = "17"
     }
     lintOptions {
         checkReleaseBuilds false
@@ -119,8 +127,8 @@ dependencies {
     implementation 'com.trello.rxlifecycle2:rxlifecycle:2.2.1'
     implementation 'com.trello.rxlifecycle2:rxlifecycle-components:2.1.0'
     //butterknife
-    implementation 'com.jakewharton:butterknife:10.1.0'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:10.1.0'
+    //implementation 'com.jakewharton:butterknife:10.1.0'
+    //annotationProcessor 'com.jakewharton:butterknife-compiler:10.1.0'
     //convenientbanner
     implementation 'com.bigkoo:convenientbanner:2.0.5'
     //md

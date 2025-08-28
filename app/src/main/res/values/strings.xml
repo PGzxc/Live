@@ -320,7 +320,7 @@
     </string-array>
     <!--直播流-->
     <string-array name="live_streams">
-        <item>http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4</item>
+        <item>http://vjs.zencdn.net/v/oceans.mp4</item>
         <item>http://vjs.zencdn.net/v/oceans.mp4</item>
     </string-array>
     <!--直播页Pager-->

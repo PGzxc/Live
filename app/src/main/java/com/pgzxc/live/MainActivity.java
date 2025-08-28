@@ -91,34 +91,37 @@ public class MainActivity extends BaseActivity<ActivityMainBinding> {
             LiveDialog liveDialog = new LiveDialog(MainActivity.this);
             liveDialog.showDialog();
         });
-        mDataBinding.bottomBar.setOnTabSelectListener(tabId -> {
-            switch (tabId) {
-                case R.id.tab_home:
-                    position = FIRST;
-                    break;
-                case R.id.tab_recent:
-                    position = SECOND;
-                    break;
-                case R.id.tab_follow:
-                    position = THIRD;
-                    break;
-                case R.id.tab_me:
-                    position = FOURTH;
-                    break;
-            }
-            getSupportDelegate().showHideFragment(mFragments[position]);
-            //switchFragment(mCurrentFragment,mFragments[position]);
-
-
-            //getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer,mFragments[position]).show(mFragments[position]) .commitAllowingStateLoss();
-            //getSupportDelegate().showHideFragment(mFragments[position]);
-            //transaction.replace(R.id.fragmentContainer,mFragments[position]);
-            //transaction.show(mFragments[position]);
-            //transaction.commitAllowingStateLoss();
-
-
-        });
-
+//        mDataBinding.bottomBar.setOnTabSelectListener(tabId -> {
+//            switch (tabId) {
+//                case R.id.tab_home:
+//                    position = FIRST;
+//                    break;
+//                case R.id.tab_recent:
+//                    position = SECOND;
+//                    break;
+//                case R.id.tab_follow:
+//                    position = THIRD;
+//                    break;
+//                case R.id.tab_me:
+//                    position = FOURTH;
+//                    break;
+//            }
+//
+//            getSupportDelegate().showHideFragment(mFragments[position]);
+//        });
+        mDataBinding.bottomBar.setOnTabSelectListener(tabId1 -> {
+                    if (tabId1 == R.id.tab_home) {
+                        position = FIRST;
+                    } else if (tabId1 == R.id.tab_recent) {
+                        position = SECOND;
+                    } else if (tabId1 == R.id.tab_follow) {
+                        position = THIRD;
+                    } else {
+                        position = FOURTH;
+                    }
+                    getSupportDelegate().showHideFragment(mFragments[position]);
+                }
+        );
     }
     /**
      * 主activity进行控制不同的fragment

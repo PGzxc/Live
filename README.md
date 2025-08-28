@@ -24,15 +24,24 @@ gradle:6.1.1-bin
 build-tools:com.android.tools.build:gradle:4.0.2
 ```
 
-### 2.2 V2(2025年)—仅更新配置并提供APK下载
+### 2.2 V3(2025年)—仅更新配置并提供APK下载
 
 ```
-gradle:6.7.1-all
+gradle:gradle-8.14.3-bin
 build-tools:com.android.tools.build:gradle:4.2.2
 jdk:1.8(Setting——>Build,Execution,Deployment——>Build Tools——>Gradle——>jdk)
 ```
 
+### 2.3 V4(2025年)
+
+```
+gradle:6.7.1-all
+jdk:17(Setting——>Build,Execution,Deployment——>Build Tools——>Gradle——>jdk)
+cli
+```
+
 ## 四 其他
+
 * ~~因时间紧张，仅实现部分功能，后期有时间会补上；如果在运行时有Bug，请提交issue，见谅。~~
 * 项目最近仍有人star和使用，环信依赖更新到了最新版(有问题可留言)
 

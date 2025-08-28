@@ -11,8 +11,8 @@ import android.widget.TextView;
 
 import com.pgzxc.live.R;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
+//import butterknife.BindView;
+//import butterknife.ButterKnife;
 
 /**
  * 关注与粉丝
@@ -20,18 +20,18 @@ import butterknife.ButterKnife;
 
 public class FollowView extends LinearLayout {
 
-    @BindView(R.id.tv_follow_num)
+    //@BindView(R.id.tv_follow_num)
     TextView tvFollowNum;
-    @BindView(R.id.tv_fans_num)
+    //@BindView(R.id.tv_fans_num)
     TextView tvFansNum;
     TextView tvMyFollow;
     TextView tvMyFans;
     Context mContext;
 
-    @BindView(R.id.rl_follow)
+    //@BindView(R.id.rl_follow)
     RelativeLayout rlFollow;
 
-    @BindView(R.id.rl_fans)
+    //@BindView(R.id.rl_fans)
     RelativeLayout rlFans;
 
     public FollowView(Context context) {
@@ -46,7 +46,11 @@ public class FollowView extends LinearLayout {
 
     private void initView(AttributeSet attrs) {
         View view = View.inflate(mContext, R.layout.view_follow, this);
-        ButterKnife.bind(view);
+        //ButterKnife.bind(view);
+
+        rlFollow = view.findViewById(R.id.rl_follow);
+        rlFans = view.findViewById(R.id.rl_fans);
+
         tvFollowNum = view.findViewById(R.id.tv_follow_num);
         tvFansNum = view.findViewById(R.id.tv_fans_num);
         tvMyFollow = view.findViewById(R.id.tv_my_follow);
@@ -57,30 +61,48 @@ public class FollowView extends LinearLayout {
         int indexCount = typedArray.getIndexCount();
         for (int i = 0; i < indexCount; i++) {
             int index = typedArray.getIndex(i);
-            switch (index) {
-                case R.styleable.FollowView_follow_num:
-                    String followNum = typedArray.getString(R.styleable.FollowView_follow_num);
-                    tvFollowNum.setText(followNum);
-                    break;
-                case R.styleable.FollowView_fans_num:
-                    String fansNum = typedArray.getString(R.styleable.FollowView_fans_num);
-                    tvFansNum.setText(fansNum);
-                    break;
-                case R.styleable.FollowView_follow_typeFace:
-                    String followTypeFace = typedArray.getString(R.styleable.FollowView_follow_typeFace);
-                    Typeface typeFaceNum = getTypeFaceFromAsset(followTypeFace);
-                    tvFansNum.setTypeface(typeFaceNum);
-                    tvFollowNum.setTypeface(typeFaceNum);
-                    break;
-                case R.styleable.FollowView_content_typeFace:
-                    String otherTypeFace = typedArray.getString(R.styleable.FollowView_content_typeFace);
-                    Typeface typeFace = getTypeFaceFromAsset(otherTypeFace);
-                    tvMyFollow.setTypeface(typeFace);
-                    tvMyFans.setTypeface(typeFace);
-                    break;
-                default:
-                    break;
+            if (index == R.styleable.FollowView_follow_num) {
+                String followNum = typedArray.getString(R.styleable.FollowView_follow_num);
+                tvFollowNum.setText(followNum);
+            } else if (index == R.styleable.FollowView_fans_num) {
+                String fansNum = typedArray.getString(R.styleable.FollowView_fans_num);
+                tvFansNum.setText(fansNum);
+            } else if (index == R.styleable.FollowView_follow_typeFace) {
+                String followTypeFace = typedArray.getString(R.styleable.FollowView_follow_typeFace);
+                Typeface typeFaceNum = getTypeFaceFromAsset(followTypeFace);
+                tvFansNum.setTypeface(typeFaceNum);
+                tvFollowNum.setTypeface(typeFaceNum);
+            } else if (index == R.styleable.FollowView_content_typeFace) {
+                String otherTypeFace = typedArray.getString(R.styleable.FollowView_content_typeFace);
+                Typeface typeFace = getTypeFaceFromAsset(otherTypeFace);
+                tvMyFollow.setTypeface(typeFace);
+                tvMyFans.setTypeface(typeFace);
             }
+
+//            switch (index) {
+//                case R.styleable.FollowView_follow_num:
+//                    String followNum = typedArray.getString(R.styleable.FollowView_follow_num);
+//                    tvFollowNum.setText(followNum);
+//                    break;
+//                case R.styleable.FollowView_fans_num:
+//                    String fansNum = typedArray.getString(R.styleable.FollowView_fans_num);
+//                    tvFansNum.setText(fansNum);
+//                    break;
+//                case R.styleable.FollowView_follow_typeFace:
+//                    String followTypeFace = typedArray.getString(R.styleable.FollowView_follow_typeFace);
+//                    Typeface typeFaceNum = getTypeFaceFromAsset(followTypeFace);
+//                    tvFansNum.setTypeface(typeFaceNum);
+//                    tvFollowNum.setTypeface(typeFaceNum);
+//                    break;
+//                case R.styleable.FollowView_content_typeFace:
+//                    String otherTypeFace = typedArray.getString(R.styleable.FollowView_content_typeFace);
+//                    Typeface typeFace = getTypeFaceFromAsset(otherTypeFace);
+//                    tvMyFollow.setTypeface(typeFace);
+//                    tvMyFans.setTypeface(typeFace);
+//                    break;
+//                default:
+//                    break;
+//            }
         }
         typedArray.recycle();
     }
