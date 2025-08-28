@@ -37,7 +37,7 @@ jdk:1.8(Setting——>Build,Execution,Deployment——>Build Tools——>Gradle�
 ```
 gradle:6.7.1-all
 jdk:17(Setting——>Build,Execution,Deployment——>Build Tools——>Gradle——>jdk)
-cli
+cli:提交代码自动将apk文件发布到Release下
 ```
 
 ## 四 其他
