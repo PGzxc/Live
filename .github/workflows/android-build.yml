@@ -3,8 +3,9 @@ name: Android CI
 on:
   push:
     branches:
-      - master   # 监听 main 分支推送，你可以改成 master 或其他分支
-  pull_request:
+      - master
+    tags:
+      - 'v*'   # 当打 tag（v1.0.0 形式）时触发
 
 jobs:
   build:
@@ -27,18 +28,32 @@ jobs:
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v3
 
-      # 4. 解密签名文件（推荐存到 GitHub Secrets）
+      # 4. 解密签名文件
       - name: Decode Keystore
         run: |
           echo "${{ secrets.ANDROID_KEYSTORE_BASE64 }}" | base64 --decode > live.jks
 
-      # 5. 打包 APK
+      # 5. 赋予 gradlew 执行权限
+      - name: Grant execute permission for gradlew
+        run: chmod +x ./gradlew
+
+      # 6. 打包 APK
       - name: Build APK
         run: ./gradlew assembleRelease
 
-      # 6. 保存构建产物
-      - name: Upload APK
+      # 7. 保存构建产物（非 Release 情况下）
+      - name: Upload APK as Artifact
+        if: startsWith(github.ref, 'refs/tags/') == false
         uses: actions/upload-artifact@v4
         with:
           name: app-apk
           path: app/build/outputs/apk/release/*.apk
+
+      # 8. 创建 Release 并上传 APK（仅打 tag 时触发）
+      - name: Create Release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: app/build/outputs/apk/release/*.apk
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
